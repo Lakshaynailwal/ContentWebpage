@@ -1,12 +1,18 @@
+require("dotenv").config()
+
 const express = require("express")
-const PORT = 5000;
+const port = process.env.PORT||5000;
 
 const app = express();
 
+app.set("view engine", "ejs")
+app.set("views", "templates")
+
 app.get("/",async(req,res)=>{
-    res.send("hi there");
+    res.render("index.ejs")
 })
 
-app.listen(PORT,()=>{
-    console.log(`Succesfully running at PORT : ${PORT}`)
+
+app.listen(port,()=>{
+    console.log(`Succesfully running at PORT : ${port}`)
 })
