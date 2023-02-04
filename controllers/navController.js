@@ -14,12 +14,14 @@ module.exports.send_get = (req,res)=>{
 
 module.exports.send_post = (req,res) =>{
     const data = req.body;
+
     if(!data.subject){
         data.subject = `Message from ${data.email}`;
     }
     
     const transporter = nodemailer.createTransport({
         service:"gmail",
+        pool:true,
         auth:{
             user: process.env.EMAIL,
             pass: process.env.PASS
@@ -34,11 +36,12 @@ module.exports.send_post = (req,res) =>{
     }
 
     let resData = {bool : true}
-
     transporter.sendMail(mailOptions, (err,info)=>{
+        transporter.close();
         if(err){
+            console.log(err)
             resData.bool = false;
         }
-        res.json(JSON.stringify(resData));
     })
+    res.json(JSON.stringify(resData));
 }

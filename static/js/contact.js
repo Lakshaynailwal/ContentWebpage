@@ -16,7 +16,6 @@ form.addEventListener("submit", async (e) => {
 
     let data = await res.json();
     data = JSON.parse(data)
-
     if (data.bool) {
         location.assign('/');
     }
