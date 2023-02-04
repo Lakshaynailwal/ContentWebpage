@@ -1,49 +1,11 @@
 const {Router} = require('express');
 const router = Router();
 const {checkAuth} = require("../middleware/authMiddleware");
-const nodemailer = require("nodemailer");
+const { send_post, send_get, contact_get ,blog_get } = require('../controllers/navController');
 
-router.get("/blog" ,checkAuth, (req,res)=>{
-    res.render("blogs");
-})
-router.get("/contact" , (req,res)=>{
-    res.render("contact");
-})
-
-router.get("/send", (req,res) =>{
-    res.send("done");
-})
-
-router.post("/send" , (req,res) =>{
-    const data = req.body;
-    if(!data.subject){
-        data.subject = `Message from ${data.email}`;
-    }
-    
-    const transporter = nodemailer.createTransport({
-        service:"gmail",
-        auth:{
-            user: process.env.EMAIL,
-            pass: process.env.PASS
-        }
-    })
-
-    const mailOptions = {
-        from: data.email,
-        to: "nailwal001@gmail.com",
-        subject: data.subject,
-        text: data.body
-    }
-
-    let resData = {bool : true}
-
-    transporter.sendMail(mailOptions, (err,info)=>{
-        if(err){
-            resData.bool = false;
-        }
-        res.json(JSON.stringify(resData));
-    })
-
-})
+router.get("/blog" ,checkAuth, blog_get)
+router.get("/contact" , contact_get)
+router.get("/send" , send_get)
+router.post("/send" ,send_post )
 
 module.exports = router;
