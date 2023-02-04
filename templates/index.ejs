@@ -7,6 +7,21 @@
     <title>LandingPage</title>
 </head>
 <body>
-    <h1>Hi there we are a content website</h1>
+    <h1>main page</h1>
+    
+    <% if(user) {%>
+        <h2><%= user.name%></h2>
+        <br>
+        <a href="/logout">logout</a>
+    <%} else {%>
+        <a href="/signup">signup</a>
+        <br>
+        <a href="/login">login</a>        
+    <%}%>
+    <br>
+    <a href="/blog"> blogs</a>
+
+
+    
 </body>
 </html>
