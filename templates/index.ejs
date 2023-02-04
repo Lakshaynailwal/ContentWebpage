@@ -4,24 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LandingPage</title>
+    <title>HomePage</title>
 </head>
+<style>
+    body{
+        min-height: 100vh;
+        height: auto;
+    }
+</style>
 <body>
+
+    <%- include("partials/navbar.ejs") %>
+    
     <h1>main page</h1>
-    
-    <% if(user) {%>
-        <h2><%= user.name%></h2>
-        <br>
-        <a href="/logout">logout</a>
-    <%} else {%>
-        <a href="/signup">signup</a>
-        <br>
-        <a href="/login">login</a>        
-    <%}%>
     <br>
-    <a href="/blog"> blogs</a>
-
-
-    
+    <%- include("partials/footer.ejs") %>
 </body>
 </html>

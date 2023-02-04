@@ -1,0 +1,41 @@
+.form {
+    width: 40%;
+    margin: 40px auto;
+    height: 450px;
+    box-shadow: 1px 1px 15px 1px grey;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media only screen and (max-width:900px){
+    .form{
+        width: 65%;
+    }
+}
+@media only screen and (max-width:650px){
+    .form{
+        width: 80%;
+    }
+}
+
+.input {
+    width: 80%;
+    padding: 7px;
+    margin: 10px auto;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.button {
+    width: 30%;
+    padding: 10px !important;
+}
+
+.button:hover {
+    color: blue;
+    border: 2px solid black;
+}

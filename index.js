@@ -17,7 +17,7 @@ connectDB().then(()=>{
 })
 
 // getting json data
-app.use(express.static('static'));
+app.use(express.static("static"));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieparser());

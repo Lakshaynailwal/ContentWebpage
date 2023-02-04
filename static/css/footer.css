@@ -1,0 +1,125 @@
+
+.social a {
+    margin: 6px;
+    font-size: 25px;
+}
+
+.one {
+    width: 50%
+}
+
+.text-muted {
+    color: white !important;
+}
+
+.companyInfo {
+    width: 70%;
+    display: flex;
+    margin: 0px 20px;
+    flex-wrap: wrap;
+}
+
+.mainCont {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    align-items: top;
+}
+
+.Links {
+    width: 40%;
+}
+
+.maps {
+    width: 50%;
+    height: 350px;
+    margin: 0px 20px;
+}
+
+.maps iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.sec{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+}
+
+@media only screen and (max-width:1050px) {
+    .companyInfo {
+        width: 100%;
+    }
+
+    .one{
+        width:50%
+    }
+
+    .Links{
+        width:30%;
+    }
+
+    .maps {
+        width: 70%
+    }
+
+    .mainCont {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width:800px){
+    .maps{
+        width:100%
+    }
+
+    .Links{
+        width:40%;
+    }
+}
+@media only screen and (max-width:700px){
+    .companyInfo{
+        flex-direction: column;
+    }
+
+    .one{
+        width:90%;
+        margin: auto;
+    }
+    .sec{
+        width:90%;
+        margin: auto;
+    }
+
+    .Links{
+        width:60%;
+    }
+}
+
+@media only screen and (max-width:450px){
+    p{
+        font-size: 11px;
+    }
+    h6{
+        font-size: 13px;
+    }
+    .maps{
+        height: 250px;
+    }
+}
+
+.cont{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    /* width:95%;
+    margin:auto */
+
+}
+
+.link-secondary:hover{
+    color:white;
+    text-decoration: none;
+}

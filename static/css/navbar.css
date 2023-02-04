@@ -1,0 +1,36 @@
+.navbar-nav {
+    margin: auto;
+}
+.navbar-brand{
+    margin-left: 10px;
+}
+.log{
+    color:white
+}
+
+.nav-item{
+    margin-left: 10px;
+}
+.btn {
+    margin: 5px 0px;
+    background: #007bff;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.login {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem;
+    align-items: center;
+}
+.navbar {
+    padding: 10px
+}
+
+.btn:hover{
+    background-color: white;
+    border:1px solid black
+}
