@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company|ContactUs</title>
+    <link rel="stylesheet" href="/css/login.css">
+
+</head>
+
+<style>
+    .text {
+        padding: 20px;
+    }
+
+    .input {
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+
+    <%- include("partials/navbar.ejs") %>
+
+        <form class="form" action="/send">
+            <h2>Contact Us</h2>
+
+            <input class="input" type="text" name="name" required placeholder="Name" />
+
+            <input class="input" type="text" name="email" required placeholder="E-mail" />
+            <div class="email error"></div>
+
+            <input class="input" type="text" name="subject" placeholder="Subject" />
+
+            <textarea class="text input" name="body" id="" rows="10" required
+                placeholder="Write your query here!"></textarea>
+
+            <button class="btn button">Submit</button>
+        </form>
+
+        <%- include("partials/footer.ejs") %>
+
+    <script src="/js/contact.js"></script>    
+
+</body>
+
+</html>
