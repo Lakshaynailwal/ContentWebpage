@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company|WriteBlog</title>
+    <link rel="stylesheet" href="/css/writeblog.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar.ejs") %>
+        <div class="welcome">
+            <h2>Welcome <%=user.name%>
+            </h2>
+        </div>
+
+        <form class="form" action="/blog/create" method="post">
+            <input class="input com" type="text" required name="title" placeholder="Write Your Title">
+            <textarea class="text1 com" name="description" id="" placeholder="Write Your Description"></textarea>
+            <textarea class="text2 com" name="markdown" id="" placeholder="Write Your Markdown"></textarea>
+            <button class="btn ">Submit</button>
+        </form>
+
+        <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

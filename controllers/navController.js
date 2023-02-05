@@ -1,11 +1,18 @@
 const nodemailer = require("nodemailer");
+const blogs = require("../models/blog");
+const jwt = require("jsonwebtoken");
 
 module.exports.contact_get = (req,res)=>{
     res.render("contact");
 }
 
-module.exports.blog_get = (req,res)=>{
-    res.render("blogs");
+module.exports.blog_get = async (req,res)=>{
+    
+    let blogList = await blogs.find().sort({date :"desc"});
+    let context = {
+        blogs : blogList
+    }
+    res.render("blogs" , context);
 }
 
 module.exports.send_get = (req,res)=>{

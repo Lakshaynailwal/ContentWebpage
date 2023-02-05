@@ -34,3 +34,7 @@
     background-color: white;
     border:1px solid black
 }
+
+.navbar-nav .nav-link{
+    color: black !important;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company|<%= blog.title%>
+    </title>
+    <link rel="stylesheet" href="/css/showblog.css">
+</head>
+
+<body>
+
+    <%- include("partials/navbar.ejs") %>
+
+        <div class="container">
+            <div class="h22">
+                <h2 name="title">
+                    <%=blog.title%>
+                </h2>
+
+                <h4>
+                    <%=blog.description%>
+                </h4>
+                <span>Written by: <%=blog.name%></span>
+            </div>
+
+            <h5>
+                <%=blog.markdown%>
+            </h5>
+
+            <a href="/blog" class="btn btn-primary">Return</a>
+
+            <% if(user.email==blog.email) {%>
+                <a href="/blog/edit/<%=blog._id%>" class="btn btn-primary">Edit</a>
+                <a href="/blog/delete/<%=blog._id%>" class="btn btn-primary">Delete</a>
+                <%}%>
+        </div>
+
+        <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

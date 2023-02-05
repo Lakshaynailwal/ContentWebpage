@@ -1,19 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Company|Blogs</title>
+    <link rel="stylesheet" href="/css/blog.css">
 </head>
+
 <body>
 
     <%- include("partials/navbar.ejs") %>
+        <div class="cont">
+            <input class="search" type="text" placeholder="SEARCH">
+            <a class="create" href="/blog/create"><button class="btn btned">Write Blog</button></a>
+        </div>
 
-    <h1>Welcome to our blogs</h1>
-    <br>
 
-    <%- include("partials/footer.ejs") %>
+        <div class="contain">
+            <% if(blogs.length) {%>
+                <% for(let i=0;i<blogs.length;i++) {%>
+                    <div class="card">
+                        <h1 class="title info">
+                            <%= blogs[i].title %>
+                        </h1>
+                        <h5 class="date info ">
+                            <%= blogs[i].date.toLocaleDateString() %>
+                        </h5>
+                        <h5 class="description info">
+                            <%= blogs[i].description%>
+                        </h5>
+                        <span class="by info">Written by: <%= blogs[i].name %></span>
+                        <div class="button-control">
+                            <a class="btn btn1" href="/blog/<%=blogs[i]._id%>">ReadMore</a>
+                            <!-- <button class="btn ">Edit</button>
+                            <button class="btn ">Delete</button> -->
+                        </div>
+                    </div>
+                    <%}%>
+                        <%}%>
+
+
+        </div>
+
+        <%- include("partials/footer.ejs") %>
 
 </body>
+
 </html>

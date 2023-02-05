@@ -13,25 +13,25 @@
 
     <%- include("partials/navbar.ejs") %>
 
-    <form class="form" action="/signup">
-        <h2>Sign up</h2>
-        <input class="input" type="text" name="name" required placeholder="Name"/>
-        <div class="name error"></div>
+        <form class="form" action="/signup">
+            <h2>Sign up</h2>
+            <input class="input" type="text" name="name" required placeholder="Name" />
+            <div class="name error"></div>
 
-        <input class="input" type="number" name="phone" required placeholder="Phone-No"/>
-        <div class="phone error"></div>
+            <input class="input" type="number" name="phone" required placeholder="Phone-No" />
+            <div class="phone error"></div>
 
-        <input class="input" type="text" name="email" required placeholder="E-mail" />
-        <div class="email error"></div>
+            <input class="input" type="text" name="email" required placeholder="E-mail" />
+            <div class="email error"></div>
 
-        <input class="input" type="password" name="password" required placeholder="Password"/>
-        <div class="password error"></div>
+            <input class="input" type="password" name="password" required placeholder="Password" />
+            <div class="password error"></div>
 
-        <button class="btn button">Sign up</button>
-    </form>
+            <button class="btn button">Sign up</button>
+        </form>
 
-    <%- include("partials/footer.ejs") %>
-    <script src="/js/signup.js"></script>
+        <%- include("partials/footer.ejs") %>
+            <script src="/js/signup.js"></script>
 
 </body>
 

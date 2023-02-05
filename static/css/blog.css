@@ -1,0 +1,74 @@
+.cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    width: 70%;
+    margin: 30px auto 10px auto;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.card {
+    width: 360px;
+    min-height: 300px;
+    border-radius:10px !important ;
+    height: auto;
+    margin: 30px 15px 50px;
+    padding: 10px;
+    box-shadow: 1px 1px 12px 1px grey;
+}
+
+.card .btn {
+    width: 30%;
+    padding: 10px;
+    margin: 0px 1px;
+    border: 1px soild black;
+}
+
+.info {
+    margin: 7px 10px;
+}
+
+.button-control {
+    margin: 7px 10px;
+}
+
+.btn{
+    color: black;
+}
+
+.btn:hover {
+    color: blue !important
+}
+.contain{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.btned {
+    width: 100% !important;
+    border-radius: 10px;
+    margin: auto !important;
+    padding: 10px !important;
+}
+
+.create {
+    text-decoration: none;
+    border-radius: 10px;
+    width: 250px;
+    margin: auto !important;
+    padding: 10px !important;
+    color: black;
+}
+
+.create:hover {
+    color: blue;
+    text-decoration: none;
+}

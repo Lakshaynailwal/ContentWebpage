@@ -1,0 +1,43 @@
+.welcome{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px 40px 0px;
+}
+
+.form{
+    width: 70%;
+    padding: 1rem;
+    min-height: 400px;
+    height: auto;
+    box-shadow: 1px 1px 12px 1px grey;
+    border-radius:10px;
+    margin: 10px auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.com{
+    width: 80%;
+    margin:10px auto;
+    border-radius: 10px;
+    padding: 7px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.text1{
+    padding: 15px;
+    height: 100px;
+}
+.text2{
+    padding: 15px;
+    height: 170px;
+}
+
+.form .btn{
+    width: 25%;
+    padding: 10px;
+
+}
