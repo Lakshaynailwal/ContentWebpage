@@ -8,6 +8,11 @@ module.exports.create_post = (req, res) => {
 
     let { title, description, markdown } = req.body;
 
+    let image = '';
+    if (req.body.image !== undefined) {
+        image = req.body.image;
+    }
+
     const token = req.cookies.jwt;
     if (token) {
         jwt.verify(token, process.env.SECRET, async (err, decodedToken) => {
@@ -19,7 +24,7 @@ module.exports.create_post = (req, res) => {
             let user = await User.findOne({ _id: decodedToken.id });
             let email = user.email;
             let name = user.name;
-            await Blogs.create({ title, description, markdown, email, name })
+            await Blogs.create({ title, description, markdown, email, name, image })
             res.redirect("/blog")
         })
     }
@@ -89,5 +94,19 @@ module.exports.comment_post = async (req, res) => {
         res.json("true");
     } catch (error) {
         res.json("false");
+    }
+}
+
+module.exports.upload_image = async (req, res) => {
+    try {
+      
+        let imagePath = '/images';
+        imagePath = imagePath + '/' + req.file.filename;
+        
+        res.send({success:true , msg :'Post Image uploaded' ,path :imagePath});
+
+    } catch (error) {
+        console.log(error)
+        res.send({success: false , msg: error.message})
     }
 }

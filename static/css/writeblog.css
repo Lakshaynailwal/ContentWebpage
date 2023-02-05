@@ -41,3 +41,8 @@
     padding: 10px;
 
 }
+.btn1 {
+    padding: 10px !important;
+    width: 20% !important;
+    color: black !important;
+}

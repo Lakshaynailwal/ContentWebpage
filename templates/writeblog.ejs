@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company|WriteBlog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/writeblog.css">
 </head>
 
@@ -19,13 +20,42 @@
 
         <form class="form" action="/blog/create" method="post">
             <input class="input com" type="text" required name="title" placeholder="Write Your Title">
+            <button id="upbtn" type="button" class="btn btn1 btn-primary" data-toggle="modal" data-target="#upload">
+                Upload Image
+            </button>
+            <input type="hidden" name="image" id="imageupload">
             <textarea class="text1 com" name="description" id="" placeholder="Write Your Description"></textarea>
             <textarea class="text2 com" name="markdown" id="" placeholder="Write Your Markdown"></textarea>
             <button class="btn ">Submit</button>
         </form>
 
-        <%- include("partials/footer.ejs") %>
 
+        <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="up" action="/blog/upload" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <input id="upimg" class="input" type="file" required name="image">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn1 btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn1 btn-primary">Upload</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <%- include("partials/footer.ejs") %>
+            <script src="/js/writeblog.js"></script>
 </body>
 
 </html>
