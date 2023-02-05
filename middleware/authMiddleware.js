@@ -20,6 +20,32 @@ const checkAuth = (req, res, next) => {
   }
 };
 
+const checkadmin = (req,res,next)=>{
+
+  const adminEmail = process.env.ADMIN;
+  const token = req.cookies.jwt;
+
+  if(token){
+    jwt.verify(token,process.env.SECRET,async(err,decodedToken)=>{
+      if(err){
+        res.locals.admin = null
+      }
+      else{
+        let User = await user.findOne({_id: decodedToken.id});
+        if(User.email == adminEmail){
+          res.locals.admin = User;
+        }
+        next()
+      }
+    })
+  }
+  else{
+    res.locals.admin = null;
+    next();
+  }
+
+};
+
 const checkUser = (req, res, next) => {
   const token = req.cookies.jwt;
   if(token){
@@ -45,4 +71,4 @@ const checkUser = (req, res, next) => {
 
 };
 
-module.exports = { checkAuth, checkUser };
+module.exports = { checkAuth, checkadmin,checkUser };

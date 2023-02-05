@@ -32,7 +32,7 @@
 
             <a href="/blog" class="btn btn-primary">Return</a>
 
-            <% if(user.email==blog.email) {%>
+            <% if(user.email==blog.email || admin) {%>
                 <a href="/blog/edit/<%=blog._id%>" class="btn btn-primary">Edit</a>
                 <a href="/blog/delete/<%=blog._id%>" class="btn btn-primary">Delete</a>
                 <%}%>

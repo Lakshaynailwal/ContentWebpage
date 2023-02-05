@@ -8,7 +8,7 @@ const blogRoutes = require("./routes/blogRoutes");
 const app = express();  // instance of app
 const connectDB = require("./config/connectDB");
 const cookieparser = require("cookie-parser");
-const {checkUser , checkAuth } = require("./middleware/authMiddleware")
+const {checkUser , checkAuth, checkadmin } = require("./middleware/authMiddleware")
 const methodOverride = require("method-override");
 
 // connecting database
@@ -30,7 +30,7 @@ app.set("view engine", "ejs");
 app.set("views", "templates");
 
 //routes
-app.get('*' , checkUser);
+app.get('*' , checkUser,checkadmin);
 app.get('/', (req, res) => res.render('index'));
 
 app.use(AuthRoutes);

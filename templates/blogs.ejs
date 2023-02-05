@@ -34,8 +34,9 @@
                         <span class="by info">Written by: <%= blogs[i].name %></span>
                         <div class="button-control">
                             <a class="btn btn1" href="/blog/<%=blogs[i]._id%>">ReadMore</a>
-                            <!-- <button class="btn ">Edit</button>
-                            <button class="btn ">Delete</button> -->
+                            <% if(admin) {%>
+                                <a href="/blog/delete/<%=blogs[i]._id%>" class="btn btn1">Delete</a>
+                                <%}%>
                         </div>
                     </div>
                     <%}%>
