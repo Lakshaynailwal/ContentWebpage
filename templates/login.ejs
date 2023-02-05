@@ -13,16 +13,25 @@
 
     <%- include("partials/navbar.ejs") %>
 
-        <form class="form" action="/signup">
-            <h2>Login</h2>
-            <input class="input" type="text" name="email" required placeholder="E-mail" />
-            <div class="email error"></div>
+        <div class="mainbody">
+            <div class="left">
+                <img class="leftin image"
+                    src="https://preview.colorlib.com/theme/bootstrap/login-form-08/images/undraw_file_sync_ot38.svg"
+                    alt="">
+            </div>
 
-            <input class="input" type="password" name="password" required placeholder="Password" />
-            <div class="password error"></div>
-            <button class="btn button">Login</button>
-        </form>
+            <div class="right">
+                <form class="form" action="/signup">
+                    <h2>Login</h2>
+                    <input class="input" type="text" name="email" required placeholder="E-mail" />
+                    <div class="email error"></div>
 
+                    <input class="input" type="password" name="password" required placeholder="Password" />
+                    <div class="password error"></div>
+                    <button class="btn button">Login</button>
+                </form>
+            </div>
+        </div>
 
         <%- include("partials/footer.ejs") %>
 
