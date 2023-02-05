@@ -12,6 +12,65 @@
     word-wrap: break-word;
 }
 
+.text1 {
+    width: 70%;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+hr {
+    width: 90%;
+    border-top: 1px solid black !important;
+    margin-left: 5px;
+}
+
+.input {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 70%;
+    padding: 10px 30px;
+    margin: 5px 0px;
+}
+
+.section {
+    width: 100%;
+    margin: 30px auto;
+    padding: 10px;
+    border: 2px solid black;
+    min-height: 250px;
+    border-radius: 10px;
+}
+
+.form {
+    display: flex;
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px;
+    flex-direction: column;
+}
+
+.form .btn {
+    margin-top: 15px !important;
+}
+
+.btn:hover {
+    color: blue;
+    border: 2px solid black;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 80%;
+    min-height: 100px;
+    height: auto;
+    padding: 10px 30px;
+    margin: 10px 0px;
+}
+
 .container .btn {
     width: 20%;
     padding: 10px !important;

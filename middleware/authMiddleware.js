@@ -24,11 +24,11 @@ const checkadmin = (req,res,next)=>{
 
   const adminEmail = process.env.ADMIN;
   const token = req.cookies.jwt;
-
+  res.locals.admin = null;
   if(token){
     jwt.verify(token,process.env.SECRET,async(err,decodedToken)=>{
       if(err){
-        res.locals.admin = null
+        res.locals.admin = null;
       }
       else{
         let User = await user.findOne({_id: decodedToken.id});

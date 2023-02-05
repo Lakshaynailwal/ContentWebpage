@@ -27,6 +27,10 @@ const blogSchema = mongoose.Schema({
     date :{
         type:Date,
         default: Date.now
+    },
+    comments:{
+        type:Object,
+        default: {}
     }
 })
 

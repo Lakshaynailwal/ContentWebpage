@@ -31,15 +31,60 @@
             </h5>
 
             <a href="/blog" class="btn btn-primary">Return</a>
+            <% if(user){%>
+                <% if(user.email==blog.email || admin) {%>
+                    <a href="/blog/edit/<%=blog._id%>" class="btn btn-primary">Edit</a>
+                    <a href="/blog/delete/<%=blog._id%>" class="btn btn-primary">Delete</a>
+                    <%}%>
+                        <%}%>
 
-            <% if(user.email==blog.email || admin) {%>
-                <a href="/blog/edit/<%=blog._id%>" class="btn btn-primary">Edit</a>
-                <a href="/blog/delete/<%=blog._id%>" class="btn btn-primary">Delete</a>
-                <%}%>
+
+                            <div class="section">
+                                <form class="form" action="/blog/comment">
+
+                                    <input class="input" id="id" type="hidden" name="userid" value="<%=blog._id%>">
+                                    <% if(user) {%>
+                                        <input class="input" id="userid" type="hidden" value="<%=user._id%>">
+                                        <%}%>
+                                            <input class="input" id="userid" type="hidden" value="">
+                                            <input class="input" type="text" name="username"
+                                                placeholder="Enter Your Name">
+
+                                            <textarea required class="text1" name="comment"
+                                                placeholder="Write Your Comment"></textarea>
+                                            <button class="btn btn-primary" type="submit">Post</button>
+                                            <p style="color:red" id="notUser"></p>
+                                </form>
+
+                                <hr>
+
+                                <% if(blog.comments.length !=0) {%>
+                                    <% for(let j=0;j<blog.comments.length;j++){ %>
+                                        <div class="section2">
+                                            <!-- show comment -->
+                                            <span style="font-size: 20px;">Comment by: <%=blog.comments[j].name %>
+                                            </span>
+                                            <span>
+                                                <%=blog.comments[j].date.toLocaleString() %>
+                                            </span>
+                                            <h3 id="comment" class="mt-2">
+                                                <%=blog.comments[j].comment %>
+                                            </h3>
+                                        </div>
+
+                                        <%}%>
+                                            <%}%>
+
+
+                            </div>
+
         </div>
 
-        <%- include("partials/footer.ejs") %>
 
+
+
+        <%- include("partials/footer.ejs") %>
+            <script src="/js/showblog.js"></script>
 </body>
 
 </html>

@@ -11,6 +11,7 @@ const cookieparser = require("cookie-parser");
 const {checkUser , checkAuth, checkadmin } = require("./middleware/authMiddleware")
 const methodOverride = require("method-override");
 
+
 // connecting database
 connectDB().then(()=>{
     app.listen(port,()=>{
