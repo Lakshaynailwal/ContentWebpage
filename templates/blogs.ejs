@@ -12,9 +12,9 @@
 <body>
 
     <%- include("partials/navbar.ejs") %>
-        <div class="cont">
-            <input class="search" type="text" placeholder="SEARCH">
-            <a class="create" href="/blog/create"><button class="btn btned">Write Blog</button></a>
+        <div class="conti">
+            <!-- <input class="search" type="text" placeholder="SEARCH"> -->
+            <a class="create" href="/blog/create"><button class="btn btned">Write A Blog</button></a>
         </div>
 
 
@@ -25,13 +25,13 @@
                         <h1 class="title info">
                             <%= blogs[i].title %>
                         </h1>
+                        <span class="by info">Posted by: <%= blogs[i].name %></span>
                         <h5 class="date info ">
                             <%= blogs[i].date.toLocaleDateString() %>
                         </h5>
                         <h5 class="description info">
                             <%= blogs[i].description%>
                         </h5>
-                        <span class="by info">Written by: <%= blogs[i].name %></span>
                         <div class="button-control">
                             <a class="btn btn1" href="/blog/<%=blogs[i]._id%>">ReadMore</a>
                             <% if(admin) {%>

@@ -20,13 +20,19 @@
 
         <form class="form" action="/blog/create" method="post">
             <input class="input com" type="text" required name="title" placeholder="Write Your Title">
-            <button id="upbtn" type="button" class="btn btn1 btn-primary" data-toggle="modal" data-target="#upload">
-                Upload Image
-            </button>
-            <input type="hidden" name="image" id="imageupload">
+            <div class="button" style="width: 80%; margin: auto;">
+                <button id="upbtn" type="button" class="btn btn1 btn-primary" data-toggle="modal" data-target="#upload">
+                    Upload Image
+                </button>
+                <input type="hidden" name="image" id="imageupload">
+            </div>
             <textarea class="text1 com" name="description" id="" placeholder="Write Your Description"></textarea>
             <textarea class="text2 com" name="markdown" id="" placeholder="Write Your Markdown"></textarea>
-            <button class="btn ">Submit</button>
+            <div style="width: 80% ; margin: auto;" class="button-control">
+                <button class="btn ">Submit</button>
+                <button class="btn " onclick="location.assign('/blog')">Cancel</button>
+            </div>
+
         </form>
 
 

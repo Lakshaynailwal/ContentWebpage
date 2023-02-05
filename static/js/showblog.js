@@ -6,8 +6,8 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
     const para = document.getElementById('notUser');
-    if (userid) {
-
+    if (userid != '') {
+        console.log(userid);
         para.innerText = "";
         const id = document.getElementById("id").value
         const data = form.comment.value
@@ -22,6 +22,7 @@ form.addEventListener("submit", async (e) => {
         let bool = await res.json();
         bool = JSON.parse(bool);
 
+        console.log(bool);
         if (bool) {
             location.assign(`/blog/${id}`);
         }

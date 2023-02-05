@@ -82,6 +82,7 @@ module.exports.delete_get = async (req, res) => {
 module.exports.comment_post = async (req, res) => {
     const { id, data, username } = req.body;
     try {
+        // console.log(req.body);
         await Blogs.findOneAndUpdate({ _id: id }, {
             $push: {
                 comments: {
@@ -93,6 +94,7 @@ module.exports.comment_post = async (req, res) => {
         })
         res.json("true");
     } catch (error) {
+        console.log(error);
         res.json("false");
     }
 }

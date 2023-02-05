@@ -1,6 +1,10 @@
-.cont {
+.conti {
     display: flex;
     flex-direction: column;
+    background: url("https://img.freepik.com/free-photo/creative-flat-lay-photo-workspace-desk_7861-894.jpg?w=996&t=st=1675627458~exp=1675628058~hmac=d7c86e3edf43871dbdf93e4f293c50f2c454509c8646aac2a4a7018c7753f7fa") no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 500px;
+
 }
 
 .search {
@@ -13,9 +17,10 @@
 }
 
 .card {
-    width: 360px;
+    width: 40%;
+    background-color: #e0e0e05c !important;
     min-height: 300px;
-    border-radius:10px !important ;
+    border-radius: 10px !important;
     height: auto;
     margin: 30px 15px 50px;
     padding: 10px;
@@ -27,6 +32,7 @@
     padding: 10px;
     margin: 0px 1px;
     border: 1px soild black;
+    background-color: #009688 !important;
 }
 
 .info {
@@ -37,14 +43,17 @@
     margin: 7px 10px;
 }
 
-.btn{
+.btn {
     color: black;
 }
 
-.btn:hover {
-    color: blue !important
+.btn1:hover {
+    color: black;
+    border: 2px solid #009688 !important;
+    background-color: unset !important;
 }
-.contain{
+
+.contain {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -56,19 +65,22 @@
     width: 100% !important;
     border-radius: 10px;
     margin: auto !important;
-    padding: 10px !important;
+    padding: 20px !important;
+    background-color: #fff176 !important;
 }
 
 .create {
     text-decoration: none;
     border-radius: 10px;
-    width: 250px;
+    width: 20%;
     margin: auto !important;
     padding: 10px !important;
     color: black;
 }
 
-.create:hover {
-    color: blue;
+.btned:hover {
+    color: black;
+    border: 2px solid #fff176 !important;
+    background-color: transparent !important;
     text-decoration: none;
 }

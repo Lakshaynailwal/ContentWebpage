@@ -6,39 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company|ContactUs</title>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/contact.css">
 
 </head>
-
-<style>
-    .text {
-        padding: 20px;
-    }
-
-    .input {
-        border: 2px solid black;
-    }
-</style>
 
 <body>
 
     <%- include("partials/navbar.ejs") %>
 
-        <form class="form" action="/send">
-            <h2>Contact Us</h2>
+        <div class="mainbody">
+            <div class="left">
+                <h1 class="leftin">Let's talk about everything!</h1>
+                <p class="leftin para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ad.</p>
+                <img class="leftin image"
+                    src="https://preview.colorlib.com/theme/bootstrap/contact-form-16/images/undraw-contact.svg" alt="">
+            </div>
 
-            <input class="input" type="text" name="name" required placeholder="Name" />
+            <div class="right">
+                <form class="form" action="/send">
 
-            <input class="input" type="text" name="email" required placeholder="E-mail" />
-            <div class="email error"></div>
+                    <input class="input" type="text" name="name" required placeholder="Name" />
 
-            <input class="input" type="text" name="subject" placeholder="Subject" />
+                    <input class="input" type="text" name="email" required placeholder="E-mail" />
+                    <div class="email error"></div>
 
-            <textarea class="text input" name="body" id="" rows="10" required
-                placeholder="Write your query here!"></textarea>
+                    <input class="input" type="text" name="subject" placeholder="Subject" />
 
-            <button class="btn button">Submit</button>
-        </form>
+                    <textarea class="text input" name="body" id="" rows="10" required
+                        placeholder="Write your query here!"></textarea>
+
+                    <button class="btn button">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
 
         <%- include("partials/footer.ejs") %>
 

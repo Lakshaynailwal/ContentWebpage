@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="/css/showblog.css">
 </head>
 
+<style>
+    .image {
+        width: 70%;
+        min-height: 370px;
+    }
+</style>
+
 <body>
 
     <%- include("partials/navbar.ejs") %>
@@ -20,11 +27,15 @@
                 <h2 name="title">
                     <%=blog.title%>
                 </h2>
-
-                <h4>
-                    <%=blog.description%>
-                </h4>
                 <span>Written by: <%=blog.name%></span>
+                <% if(blog.image){%>
+                    <div class="image">
+                        <img class="mt-4 mb-4" style="object-fit: cover; width:100%; height: 100%;" src="<%= blog.image %>" alt="">
+                    </div>
+                    <%}%>
+                        <h4>
+                            <%=blog.description%>
+                        </h4>
             </div>
 
             <h5>
