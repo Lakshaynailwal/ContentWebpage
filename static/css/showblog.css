@@ -10,6 +10,16 @@
     font-size: 30px;
 }
 
+.repform {
+    display: none;
+    flex-direction: column;
+}
+
+.replysection {
+    width: 100%;
+    margin-left: 3rem;
+}
+
 .h22{
     width: 30%;
     height: 5%;
@@ -101,16 +111,6 @@ hr {
     margin-left: 3rem;
 }
 
-/* .container .btn:hover {
-    color: black !important;
-    border: 2px solid #4caf50 !important;
-    background-color: transparent !important;
-} */
-
-/* .btn:hover {
-    color: blue !important;
-    border: 2px solid black;
-} */
 
 .avatar {
     vertical-align: middle;
@@ -152,15 +152,18 @@ img {
 }
 
 .title {
-    background: url('https://images.unsplash.com/photo-1615715757401-f30e7b27b912?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTI1NDUzfHxlbnwwfHx8fA%3D%3D&w=1000&q=80') no-repeat center center/cover;
+    background: url(https://images.unsplash.com/photo-1615715757401-f30e7b27b912?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwxMTI1NDUzfHxlbnwwfHx8fA%3D%3D&w=1000&q=80) no-repeat center center/cover;
     background-attachment: fixed;
     width: 100%;
-    padding: 12rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;;
 }
 
 .title h1 {
     font-size: 5rem;
+    text-align: center;
 }
 
 .btn2 {
@@ -197,4 +200,63 @@ img {
     width: 20%;
     padding: 10px !important;
     border-radius: 10px;
+}
+
+@media only screen and (max-width:1200px){
+    .title h1{
+        font-size:4rem ;
+    }
+}
+@media only screen and (max-width:750px){
+    .title h1{
+        font-size:3rem !important ;
+    }
+
+    .h22{
+        position: unset;
+        width: 80% !important;
+    }
+
+}
+@media only screen and (max-width:550px){
+    .title h1{
+        font-size:2rem !important ;
+    }
+
+    .two{
+        width: 100% !important;
+    }
+    .two p{
+        font-size:17px !important
+    }
+    .h22{
+        position: unset;
+        width: 100% !important;
+    }
+}
+@media only screen and (max-width:400px){
+    .title h1{
+        font-size:1.5rem !important ;
+    }
+
+    .two p{
+        font-size:14px !important
+    }
+}
+@media only screen and (max-width:1000px){
+    .title h1{
+        font-size:3.7rem ;
+    }
+    .h22{
+        position: unset;
+        width: 60%;
+    }
+    .conti{
+        flex-direction: column;
+        align-items: center;
+    }
+    .two{
+        margin-top:50px !important;
+        width:90%;
+    }
 }

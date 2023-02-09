@@ -11,18 +11,6 @@
     <link rel="stylesheet" href="/css/showblog.css">
 </head>
 
-<style>
-    .repform {
-        display: none;
-        flex-direction: column;
-    }
-
-    .replysection {
-        width: 100%;
-        margin-left: 3rem;
-    }
-</style>
-
 <body>
 
     <%- include("partials/navbar.ejs") %>
@@ -70,11 +58,11 @@
                         </div>
 
                         <!-- <a href="/blog" class="btn btn-primary">Return</a> -->
-                        
+
             </div>
 
         </div>
-        <div class="conti">
+        <!-- <div class="conti">
             <div class="section">
                 <form class="form" action="/blog/comment">
                     <h5>Leave a comment</h5>
@@ -93,11 +81,10 @@
 
                 <% if(blog.comments.length) {%>
 
-                    <div class="section2">
+                    <div class="section2" id="comment">
 
                         <% for(let j=blog.comments.length -1;j>=0;j--){ %>
                             <div class="">
-                                <!-- show comment -->
                                 <span style=" display: flex; align-items: center; font-size: 17px;"><img
                                         src="https://avatars.githubusercontent.com/u/47313528?v=4" alt="Avatar"
                                         class="avatar">
@@ -167,7 +154,7 @@
 
 
             </div>
-        </div>
+        </div> -->
 
         <%- include("partials/footer.ejs") %>
             <script src="/js/showblog.js"></script>
