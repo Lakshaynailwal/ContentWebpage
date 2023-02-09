@@ -22,7 +22,8 @@
 
 
         <form class="form" action="/blog/edit/<%= blog.id %>?_method=PUT" method="post">
-            <input class="text1 com" type="text" value="<%=blog.title%>" required name="title" placeholder="Write Your Title">
+            <input class="text1 com" type="text" value="<%=blog.title%>" required name="title"
+                placeholder="Write Your Title">
             <input class="text1 com" type="text" value="<%=blog.tag%>" name="tag" placeholder="Write A Tag">
             <!-- <div class="button" style="width: 80%; margin: auto;">
                 <button id="upbtn" type="button" class="btn btn1 btn-primary" data-toggle="modal" data-target="#upload">
@@ -30,7 +31,8 @@
                 </button>
                 <input type="hidden" name="image" id="imageupload">
             </div> -->
-            <textarea class="text1 com" type="text" name="description" id="" placeholder="Write Your Description"><%=blog.description%></textarea>
+            <textarea class="text1 com" type="text" name="description" id=""
+                placeholder="Write Your Description"><%=blog.description%></textarea>
             <textarea class="text2 com " id="textarea" name="markdown"><%-blog.markdown%></textarea>
             <div style="width: 100% ; margin: auto;" class="button-control com1">
                 <button class="btn btn3">Submit</button>
