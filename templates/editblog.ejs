@@ -5,41 +5,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company|<%= blog.title%>
-    </title>
-    <link rel="stylesheet" href="/css/showblog.css">
+    <title>Company|WriteBlog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/writeblog.css">
+    <script src="https://cdn.tiny.cloud/1/0rb8e420rp426tvfqs9h30isker6vq597rd1cq1kf3xg5osk/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
 </head>
 
 <body>
 
     <%- include("partials/navbar.ejs") %>
-
-        <div class="container">
-
-            <form action="/blog/edit/<%= blog.id %>?_method=PUT" method="POST">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input required value="<%= blog.title %>" type="text" name="title" id="title" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description"
-                        class="form-control"><%= blog.description %></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="markdown">Markdown</label>
-                    <textarea required name="markdown" id="markdown"
-                        class="form-control"><%= blog.markdown %></textarea>
-                </div>
-
-                <a href="/blog" class="btn btn-secondary">Cancel</a>
-                <button type="submit" class="btn btn-primary">Save</button>
-            </form>
-
+        <div class="welcome">
+            <h2>Welcome <%=user.name%>
+            </h2>
         </div>
 
-        <%- include("partials/footer.ejs") %>
 
+        <form class="form" action="/blog/edit/<%= blog.id %>?_method=PUT" method="post">
+            <input class="text1 com" type="text" value="<%=blog.title%>" required name="title" placeholder="Write Your Title">
+            <input class="text1 com" type="text" value="<%=blog.tag%>" name="tag" placeholder="Write A Tag">
+            <!-- <div class="button" style="width: 80%; margin: auto;">
+                <button id="upbtn" type="button" class="btn btn1 btn-primary" data-toggle="modal" data-target="#upload">
+                    Upload Image
+                </button>
+                <input type="hidden" name="image" id="imageupload">
+            </div> -->
+            <textarea class="text1 com" type="text" name="description" id="" placeholder="Write Your Description"><%=blog.description%></textarea>
+            <textarea class="text2 com " id="textarea" name="markdown"><%-blog.markdown%></textarea>
+            <div style="width: 100% ; margin: auto;" class="button-control com1">
+                <button class="btn btn3">Submit</button>
+                <button class="btn btn2" onclick="location.assign('/blog')">Cancel</button>
+            </div>
+        </form>
+        <!-- <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Upload Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form id="up" action="/blog/upload" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            <input id="upimg" class="input" type="file" required name="image">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn1 btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn1 btn-primary">Upload</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div> -->
+
+        <%- include("partials/footer.ejs") %>
+            <script src="/js/writeblog.js"></script>
+
+            <script>
+                tinymce.init({
+                    selector: '#textarea',
+                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                    tinycomments_mode: 'embedded',
+                    tinycomments_author: 'Author name',
+                    mergetags_list: [
+                        { value: 'First.Name', title: 'First Name' },
+                        { value: 'Email', title: 'Email' },
+                    ]
+                });
+            </script>
 </body>
 
 </html>

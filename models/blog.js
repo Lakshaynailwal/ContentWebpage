@@ -30,9 +30,13 @@ const blogSchema = mongoose.Schema({
     },
     comments:{
         type:Object,
-        default: {}
+        default:{}
     },
     image: {
+        type:String,
+        default:""
+    },
+    tag: {
         type:String,
         default:""
     }

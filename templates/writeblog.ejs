@@ -8,6 +8,8 @@
     <title>Company|WriteBlog</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/writeblog.css">
+    <script src="https://cdn.tiny.cloud/1/0rb8e420rp426tvfqs9h30isker6vq597rd1cq1kf3xg5osk/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
 </head>
 
 <body>
@@ -18,25 +20,26 @@
             </h2>
         </div>
 
+
         <form class="form" action="/blog/create" method="post">
-            <input class="input com" type="text" required name="title" placeholder="Write Your Title">
-            <div class="button" style="width: 80%; margin: auto;">
+            <input class="text1 com" type="text" required name="title" placeholder="Write Your Title">
+            <input class="text1 com" type="text" name="tag" placeholder="Enter A Tag">
+            <!-- <div class="button" style="width: 80%; margin: auto;">
                 <button id="upbtn" type="button" class="btn btn1 btn-primary" data-toggle="modal" data-target="#upload">
                     Upload Image
                 </button>
                 <input type="hidden" name="image" id="imageupload">
-            </div>
+            </div> -->
             <textarea class="text1 com" name="description" id="" placeholder="Write Your Description"></textarea>
-            <textarea class="text2 com" name="markdown" id="" placeholder="Write Your Markdown"></textarea>
-            <div style="width: 80% ; margin: auto;" class="button-control">
-                <button class="btn ">Submit</button>
-                <button class="btn " onclick="location.assign('/blog')">Cancel</button>
+            <textarea class="text2 com " id="textarea" name="markdown" id="markdown" placeholder="Write Your Markdown"></textarea>
+            <div style="width: 100% ; margin: auto;" class="button-control com1">
+                <button class="btn btn3">Submit</button>
+                <button class="btn btn2" onclick="location.assign('/blog')">Cancel</button>
             </div>
-
         </form>
 
 
-        <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        <!-- <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -58,10 +61,24 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <%- include("partials/footer.ejs") %>
             <script src="/js/writeblog.js"></script>
+
+            <script>
+                tinymce.init({
+                    selector: '#textarea',
+                    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                    tinycomments_mode: 'embedded',
+                    tinycomments_author: 'Author name',
+                    mergetags_list: [
+                        { value: 'First.Name', title: 'First Name' },
+                        { value: 'Email', title: 'Email' },
+                    ]
+                });
+            </script>
 </body>
 
 </html>

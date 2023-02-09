@@ -32,7 +32,6 @@
     width: 80%;
     padding: 7px;
     margin: 10px auto;
-    border-radius: 10px;
     text-align: center;
     font-size: 17px;
 }
@@ -52,7 +51,8 @@
 }
 
 .input {
-    border: 2px solid black;
+    border: unset;
+    border-bottom: 2px solid black;
 }
 
 .mainbody {

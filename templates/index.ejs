@@ -6,21 +6,360 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
+    <link rel="stylesheet" href="/css/contact.css">
 </head>
 <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
     body {
         min-height: 100vh;
         height: auto;
     }
+
+    #about {
+        width: 100%;
+        min-height: 400px;
+        text-align: center;
+        margin: 20px auto;
+        padding: 2rem 10rem;
+    }
+
+    #contact {
+        width: 100%;
+        min-height: 400px;
+        text-align: center;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    #about .para {
+
+        font-size: 20px;
+    }
+
+    #about img {
+        width: 45%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .mainsection {
+        background: url("https://images.unsplash.com/photo-1475669698648-2f144fcaaeb1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat center center/cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainsection article {
+        color: white;
+        font-size: 8rem;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-weight: bold;
+    }
+
+    .navbar {
+        position: sticky !important;
+        background-color: rgb(230, 248, 255);
+        top: 0;
+        border-bottom: 2px solid black;
+    }
+
+    #services {
+        width: 100%;
+        text-align: center;
+        min-height: 600px;
+        margin: 20px auto 0;
+        padding: 2rem 10rem;
+        /* border: 2px solid red; */
+        background: url("https://img.freepik.com/free-photo/pastel-blue-vignette-concrete-textured-background_53876-102637.jpg?size=626&ext=jpg")no-repeat center center/cover;
+        background-attachment: fixed;
+    }
+
+    .counter {
+        display: flex;
+        width: 100%;
+        background-color: #0056b3;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 200px;
+    }
+
+    .counter-1 span,
+    h1 {
+        color: white !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .counter-1 span {
+        font-size: 25px;
+    }
+
+    #promise {
+        padding: 2rem 10rem;
+        background-color: #F4F7F9;
+        background-attachment: fixed;
+        width: 100%;
+        min-height: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .promise {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .promise .element {
+        width: 30%;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        padding: 10px;
+        /* border: 2px solid black; */
+    }
+    #services .carded{
+        width: 30%;
+        min-height:400px;
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+    }
+
+    #services .section{
+        margin: 20px auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 </style>
 
 <body>
 
     <%- include("partials/navbar.ejs") %>
+        <div class="mainsection ">
+            <article>COMPANY NAME</article>
+        </div>
 
-        <h1>main page</h1>
-        <br>
+        <div id="about" class="">
+            <h2>About Us</h2>
+            <img src="https://img.freepik.com/free-vector/blogging-illustration-concept_114360-788.jpg?w=996&t=st=1675853479~exp=1675854079~hmac=adebb670cc1f9ef17f349826dc094d44c9d41eeb9835a26132a0f3f48e0c1369"
+                alt="">
+            <p class="para">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque, id. Dicta necessitatibus, culpa tenetur
+                repudiandae iste fugiat perferendis laborum iusto, corporis nisi dolorem, molestiae et expedita veniam
+                voluptates voluptatibus qui totam accusantium eveniet optio? Quibusdam ullam voluptatum vero ut alias
+                autem qui facere repellat eligendi, perferendis sunt harum mollitia non quasi reiciendis veniam. Quo
+                suscipit excepturi tempora quod, dolore est eveniet libero expedita voluptates, dignissimos error
+                voluptatum quae delectus dolor fugiat unde eius rerum. Qui repellendus aliquid id voluptatibus nostrum
+                recusandae. Ratione sed labore ipsam aliquid itaque repellat consectetur. Itaque, adipisci quod minus
+                veniam aut molestias sint in odit facere.
+            </p>
+        </div>
+
+        <div id="services">
+            <h2>Our Services</h2>
+            <div class="section">    
+                    <div class="carded" id="blog">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Blog Post</h4>
+                        <span>Take your website to the next level by communicating your brand goals and ideas through a
+                            blog.</span>
+                    </div>
+                    <div class="carded" id="website">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Website Content</h4>
+                        <span>Never miss the chance of engaging your targeted visitors with your attention grabbing website content.</span>
+                    </div>
+                    <div class="carded" id="tech">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Technical Writing</h4>
+                        <span>Our professional writers have got the right knowledge and expertise to provide technical writing services.</span>
+                    </div>
+                    <div class="carded" id="press">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Press Releases</h4>
+                        <span>Never leave any chance to market your business with the help of our press release writing services.</span>
+                    </div>
+                    <div class="carded" id="copy">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Copy Writing</h4>
+                        <span>Get more conversions out of your paid ads campaigns with our copywriting services.</span>
+                    </div>
+                    <div class="carded" id="ebook">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Ebook Writing</h4>
+                        <span>Generate leads for your business by having an informative Ebook crafted by our eBook writers.</span>
+                    </div>
+                    <div class="carded" id="white">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>White Papers</h4>
+                        <span>Showcase yourself as an expert in your specific niche by publishing quality white papers</span>
+                    </div>
+                    <div class="carded" id="email">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Email Newsletter</h4>
+                        <span>Custom email copies written by professional writers provided as per your business requirements.</span>
+                    </div>
+                    <div class="carded" id="product">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3854/3854800.png" alt="">
+                        <h4>Product Description</h4>
+                        <span>Generate more revenue from your online store by having engaging and informative product descriptions.</span>
+                    </div>
+            </div>
+
+
+        </div>
+
+
+        <div id="promise">
+            <h4 style="color:#0056b3">
+                THINGS THAT WE PROMISE
+            </h4>
+            <h2>
+                With Our Content Writing Services
+            </h2>
+            <div class="promise">
+                <div class="element">
+                    <h3>
+                        Quick Turnaround Time
+                    </h3>
+                    <p>
+                        As soon as you order your content our team of professional content creators in India start
+                        working
+                        as
+                        per the guidelines.
+                    </p>
+                </div>
+                <div class="element">
+                    <h3>
+                        Well Researched
+                    </h3>
+                    <p>
+                        We focus on providing well researched content solutions through our services in India and
+                        everything
+                        goes as per a solid content strategy.
+                    </p>
+                </div>
+                <div class="element">
+                    <h3>
+                        SEO Optimized Content
+                    </h3>
+                    <p>
+                        The content that we deliver is optimized for both the users and search engines. It allows our
+                        clients to get better results for their online SEO campaigns.
+                    </p>
+                </div>
+                <div class="element">
+                    <h3>
+                        Copyscape Passed
+                    </h3>
+                    <p>
+                        We hate copied content as much as you people do. Plagiarism free content is always on our
+                        priority
+                        list and the end product for our clients would be 100% unique and engaging content.
+                    </p>
+                </div>
+                <div class="element">
+                    <h3>
+                        Tailor-Made
+                    </h3>
+                    <p>
+                        We ask enough questions before starting a project to know all about your needs and requirements.
+                        This makes sure that the content aligns with your brand's goals.
+                    </p>
+                </div>
+                <div class="element">
+                    <h3>
+                        Fully Managed
+                    </h3>
+                    <p>
+                        You don't need to manage writers and their gigs as we provide fully managed content writing
+                        services. Focus on the things that you are good at and let us do the content part for you.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="contact">
+            <h2>Contact Us</h2>
+            <div class="mainbody">
+                <div class="left">
+                    <h1 class="leftin">Let's talk about everything!</h1>
+                    <p class="leftin para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ad.</p>
+                    <img class="leftin image"
+                        src="https://preview.colorlib.com/theme/bootstrap/contact-form-16/images/undraw-contact.svg"
+                        alt="">
+                </div>
+
+                <div class="right">
+                    <form class="form" action="/send">
+
+                        <input class="input" type="text" name="name" required placeholder="Name" />
+
+                        <input class="input" type="text" name="email" required placeholder="E-mail" />
+                        <div class="email error"></div>
+
+                        <input class="input" type="text" name="subject" placeholder="Subject" />
+
+                        <textarea class="text input" name="body" id="" rows="10" required
+                            placeholder="Write your query here!"></textarea>
+
+                        <button class="btn button">Contact</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="counter">
+            <div class="client counter-1 ">
+                <h1>350+</h1>
+                <span>clients</span>
+            </div>
+            <div class="content counter-1 ">
+                <h1>20,000+</h1>
+                <span>Content Piece Delivered</span>
+            </div>
+            <div class="word counter-1 ">
+                <h1>16M+</h1>
+                <span>Words Written</span>
+            </div>
+            <div class="pro counter-1 ">
+                <h1>800+</h1>
+                <span>Projects</span>
+            </div>
+        </div>
+
+
         <%- include("partials/footer.ejs") %>
+
+            <script src="/js/contact.js"></script>
+
 </body>
 
 </html>

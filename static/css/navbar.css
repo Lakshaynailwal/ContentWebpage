@@ -38,3 +38,7 @@
 .navbar-nav .nav-link{
     color: black !important;
 }
+
+*{
+    scroll-behavior: smooth;
+}

@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const Blogs = require("../models/blog");
+const { ObjectId } = require("mongodb");
 
 module.exports.create_get = (req, res) => res.render("writeblog")
 
@@ -8,9 +9,16 @@ module.exports.create_post = (req, res) => {
 
     let { title, description, markdown } = req.body;
 
+    // console.log(req.body)
+
     let image = '';
     if (req.body.image !== undefined) {
         image = req.body.image;
+    }
+
+    let tag = '';
+    if (req.body.tag) {
+        tag = req.body.tag;
     }
 
     const token = req.cookies.jwt;
@@ -24,7 +32,7 @@ module.exports.create_post = (req, res) => {
             let user = await User.findOne({ _id: decodedToken.id });
             let email = user.email;
             let name = user.name;
-            await Blogs.create({ title, description, markdown, email, name, image })
+            await Blogs.create({ title, description, markdown, email, name, image, tag })
             res.redirect("/blog")
         })
     }
@@ -62,7 +70,8 @@ module.exports.editblog_put = async (req, res) => {
         _id,
         title: req.body.title,
         description: req.body.description,
-        markdown: req.body.markdown
+        markdown: req.body.markdown,
+        tag: req.body.tag
     });
     try {
         await blog.save();
@@ -82,10 +91,12 @@ module.exports.delete_get = async (req, res) => {
 module.exports.comment_post = async (req, res) => {
     const { id, data, username } = req.body;
     try {
-        // console.log(req.body);
-        await Blogs.findOneAndUpdate({ _id: id }, {
+
+        var comment_id = new ObjectId();
+        const Blog = await Blogs.findByIdAndUpdate({ _id: id }, {
             $push: {
-                comments: {
+                "comments": {
+                    _id: comment_id,
                     name: username,
                     comment: data,
                     date: new Date
@@ -101,14 +112,38 @@ module.exports.comment_post = async (req, res) => {
 
 module.exports.upload_image = async (req, res) => {
     try {
-      
+
         let imagePath = '/images';
         imagePath = imagePath + '/' + req.file.filename;
-        
-        res.send({success:true , msg :'Post Image uploaded' ,path :imagePath});
+
+        res.send({ success: true, msg: 'Post Image uploaded', path: imagePath });
 
     } catch (error) {
         console.log(error)
-        res.send({success: false , msg: error.message})
+        res.send({ success: false, msg: error.message })
+    }
+}
+
+module.exports.comment_reply = async (req, res) => {
+    try {
+
+        let reply_id = new ObjectId();
+        await Blogs.updateOne({
+            "_id":new ObjectId(req.body.blog_id),
+            "comments._id":new ObjectId(req.body.comment_id)
+        },
+        {
+          $push:{
+            "comments.$.replies": {_id: reply_id , name : req.body.username ,reply: req.body.reply,date: new Date}
+          } 
+            
+        })
+        
+
+        res.json("true");
+
+    } catch (error) {
+        console.log(error);
+        res.json("flase");
     }
 }

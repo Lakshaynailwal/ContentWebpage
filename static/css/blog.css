@@ -3,7 +3,7 @@
     flex-direction: column;
     background: url("https://img.freepik.com/free-photo/creative-flat-lay-photo-workspace-desk_7861-894.jpg?w=996&t=st=1675627458~exp=1675628058~hmac=d7c86e3edf43871dbdf93e4f293c50f2c454509c8646aac2a4a7018c7753f7fa") no-repeat center center/cover;
     background-attachment: fixed;
-    height: 500px;
+    height: 550px;
 
 }
 
@@ -16,23 +16,29 @@
     border-radius: 10px;
 }
 
-.card {
-    width: 70%;
-    background-color: #e0e0e05c !important;
+.carded {
+    width: 30%;
     min-height: 300px;
+    /* border: 2px solid black; */
     border-radius: 10px !important;
     height: auto;
     margin: 30px 15px 50px;
-    padding: 10px;
-    box-shadow: 1px 1px 12px 1px grey;
+    padding: 25px;
+    box-shadow: 0px 0px 10px -4px black;
+    border-left: 2px solid black !important;
+    border-bottom: 2px solid black !important;
 }
 
-.card .btn {
+.carded .btn {
     width: 30%;
     padding: 10px;
     margin: 0px 1px;
     border: 1px soild black;
-    background-color: #009688 !important;
+
+}
+
+.carded .btn1 {
+    background-color: #9ccc65 !important;
 }
 
 .info {
@@ -49,7 +55,17 @@
 
 .btn1:hover {
     color: black;
-    border: 2px solid #009688 !important;
+    border: 2px solid #9ccc65 !important;
+    background-color: unset !important;
+}
+
+.btn2 {
+    background-color: red !important;
+}
+
+.btn2:hover {
+    color: black;
+    border: 2px solid red !important;
     background-color: unset !important;
 }
 
@@ -59,6 +75,8 @@
     width: 100%;
     margin: auto;
     justify-content: center;
+    padding: 30px;
+    margin-top: 30px;
 }
 
 .btned {
@@ -86,10 +104,11 @@
 }
 
 @media only screen and (max-width:650px) {
-    .card{
+    .carded {
         width: 100% !important;
     }
-    .create{
+
+    .create {
         width: 50% !important;
     }
 }

@@ -12,9 +12,14 @@
 </head>
 
 <style>
-    .image {
-        width: 70%;
-        min-height: 370px;
+    .repform {
+        display: none;
+        flex-direction: column;
+    }
+
+    .replysection {
+        width: 100%;
+        margin-left: 3rem;
     }
 </style>
 
@@ -22,76 +27,146 @@
 
     <%- include("partials/navbar.ejs") %>
 
-        <div class="container">
+        <div class="title">
+            <h1 name="title">
+                <%=blog.title%>
+            </h1>
+        </div>
+
+        <div class="container conti" style="max-width:95vw">
+
             <div class="h22">
-                <h2 name="title">
-                    <%=blog.title%>
-                </h2>
-                <span>Written by: <%=blog.name%></span>
-                <% if(blog.image){%>
-                    <div class="image">
-                        <img class="mt-4 mb-4" style="object-fit: cover; width:100%; height: 100%;" src="<%= blog.image %>" alt="">
-                    </div>
+                <span class="mt-3">Posted by: <%=blog.name%></span>
+                <% if(blog.tag){%>
+                    <span style="padding: 5px;
+                    border-radius: 10px;background-color: grey; color: white;" class="by info">
+                        <%= blog.tag %>
+                    </span>
                     <%}%>
-                        <h4>
+                        <span class="mt-3">
+                            <%=blog.date.toLocaleString()%>
+                        </span>
+
+                        <h5 class="mt-3">
                             <%=blog.description%>
-                        </h4>
+                        </h5>
+
+                        <% if(user){%>
+                            <% if(user.email==blog.email || admin) {%>
+                                <a href="/blog/edit/<%=blog._id%>" class=" btn2 btn btn-primary">Edit</a>
+                                <a href="/blog/delete/<%=blog._id%>" class="btn-danger btn3 btn ">Delete</a>
+                                <%}%>
+                                    <%}%>
             </div>
 
-            <h5>
-                <%=blog.markdown%>
-            </h5>
-
-            <a href="/blog" class="btn btn-primary">Return</a>
-            <% if(user){%>
-                <% if(user.email==blog.email || admin) {%>
-                    <a href="/blog/edit/<%=blog._id%>" class="btn btn-primary">Edit</a>
-                    <a href="/blog/delete/<%=blog._id%>" class="btn btn-primary">Delete</a>
+            <div class="two">
+                <% if(blog.image){%>
+                    <div class="image">
+                        <img class="" src="<%= blog.image %>" alt="">
+                    </div>
                     <%}%>
+                        <div>
+                            <%-blog.markdown%>
+                        </div>
+
+                        <!-- <a href="/blog" class="btn btn-primary">Return</a> -->
+                        
+            </div>
+
+        </div>
+        <div class="conti">
+            <div class="section">
+                <form class="form" action="/blog/comment">
+                    <h5>Leave a comment</h5>
+
+                    <input class="input" id="id" type="hidden" name="userid" value="<%=blog._id%>">
+                    <% if(user) {%>
+                        <input class="input" id="userid" type="hidden" value="<%=user._id%>">
                         <%}%>
+                            <input class="input" id="userid" type="hidden" value="">
+                            <input class="input" type="text" name="username" placeholder="Enter Your Name">
 
+                            <textarea required class="text1" name="comment" placeholder="Write Your Comment"></textarea>
+                            <button class="btn btn1 " type="submit">Post</button>
+                            <p style="color:red" id="notUser"></p>
+                </form>
 
-                            <div class="section">
-                                <form class="form" action="/blog/comment">
+                <% if(blog.comments.length) {%>
 
-                                    <input class="input" id="id" type="hidden" name="userid" value="<%=blog._id%>">
-                                    <% if(user) {%>
-                                        <input class="input" id="userid" type="hidden" value="<%=user._id%>">
-                                        <%}%>
-                                            <input class="input" id="userid" type="hidden" value="">
-                                            <input class="input" type="text" name="username"
-                                                placeholder="Enter Your Name">
+                    <div class="section2">
 
-                                            <textarea required class="text1" name="comment"
-                                                placeholder="Write Your Comment"></textarea>
-                                            <button class="btn btn-primary" type="submit">Post</button>
-                                            <p style="color:red" id="notUser"></p>
-                                </form>
+                        <% for(let j=blog.comments.length -1;j>=0;j--){ %>
+                            <div class="">
+                                <!-- show comment -->
+                                <span style=" display: flex; align-items: center; font-size: 17px;"><img
+                                        src="https://avatars.githubusercontent.com/u/47313528?v=4" alt="Avatar"
+                                        class="avatar">
+                                    <p style="margin:unset; margin-left: 1rem;
+                                        width: 30%;">
+                                        <%=blog.comments[j].name %>
+                                    </p>
+                                    <b style="position: relative;
+                                        left: 15rem;
+                                        font-size: 15px;">
+                                        <%=blog.comments[j].date.toLocaleString() %>
+                                    </b>
 
-                                <hr>
+                                </span>
 
-                                <% if(blog.comments.length !=0) {%>
-                                    <% for(let j=blog.comments.length -1;j>=0;j--){ %>
-                                        <div class="section2">
-                                            <!-- show comment -->
-                                            <span style=" display: flex; align-items: center; font-size: 20px;"><img
-                                                    src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"
-                                                    class="avatar"> &nbsp <%=blog.comments[j].name %>
+                                <h6 id="comment" class="mt-2 ">
+                                    <%=blog.comments[j].comment %>
+                                </h6>
+                                <a href="" class="reply">Reply</a>
+                                <% if(blog.comments[j].replies) {%>
+
+                                    <div class="replysection">
+                                        <% for(let k=blog.comments[j].replies.length -1; k>=0 ;k--) {%>
+                                            <span style=" display: flex; align-items: center; font-size: 17px;"><img
+                                                    src="https://avatars.githubusercontent.com/u/47313528?v=4" alt="Avatar"
+                                                    class="avatar">
+                                                <p style="margin:unset; margin-left: 1rem;
+                                                width: 30%;">
+                                                    <%=blog.comments[j].replies[k].name %>
+                                                </p>
+                                                <b style="position: relative;
+                                        left: 12rem;
+                                        font-size: 15px;">
+                                                    <%=blog.comments[j].replies[k].date.toLocaleString() %>
+                                                </b>
+
                                             </span>
-                                            <span>
-                                                <%=blog.comments[j].date.toLocaleString() %>
-                                            </span>
-                                            <h3 id="comment" class="mt-2">
-                                                <%=blog.comments[j].comment %>
-                                            </h3>
-                                        </div>
+                                            <h6 id="comment" class="mt-2 ml-5 ">
+                                                <%=blog.comments[j].replies[k].reply %>
+                                            </h6>
 
-                                        <%}%>
                                             <%}%>
+                                    </div>
 
+                                    <%}%>
+
+                                        <div class="replyform">
+                                            <form action="/blog/reply" class="repform">
+                                                <input class="input" type="text" name="username"
+                                                    placeholder="Enter Your Name">
+                                                <input type="hidden" name="comment_id"
+                                                    value="<%=blog.comments[j]._id %>">
+                                                <input type="hidden" name="blog_id" value="<%=blog._id %>">
+                                                <textarea required class="text1" name="reply"
+                                                    placeholder="Write Your Reply"></textarea>
+                                                <button class="btn btn1 " type="submit">Reply</button>
+                                            </form>
+                                        </div>
 
                             </div>
 
+                            <hr>
+                            <%}%>
+                    </div>
+
+                    <%}%>
+
+
+            </div>
         </div>
 
         <%- include("partials/footer.ejs") %>

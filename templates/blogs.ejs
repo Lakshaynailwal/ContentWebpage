@@ -20,27 +20,46 @@
 
         <div class="contain">
             <% if(blogs.length) {%>
-                <% for(let i=0;i<blogs.length;i++) {%>
-                    <div class="card">
-                        <h1 class="title info">
-                            <%= blogs[i].title %>
-                        </h1>
-                        <span class="by info">Posted by: <%= blogs[i].name %></span>
-                        <h5 class="date info ">
-                            <%= blogs[i].date.toLocaleDateString() %>
-                        </h5>
-                        <h5 class="description info">
-                            <%= blogs[i].description%>
-                        </h5>
-                        <div class="button-control">
-                            <a class="btn btn1" href="/blog/<%=blogs[i]._id%>">ReadMore</a>
-                            <% if(admin) {%>
-                                <a href="/blog/delete/<%=blogs[i]._id%>" class="btn btn1">Delete</a>
+
+                <% for(let j=0;j<1;j++) {%>
+
+                    <% for(let i=0;i<blogs.length;i++) {%>
+                        <div class="carded">
+                            <% if(blogs[i].image) {%>
+                                <div class="image">
+                                    <img src="<%=blogs[i].image %>" alt="">
+                                </div>
                                 <%}%>
+
+                                    <h3 class="title info">
+                                        <%= blogs[i].title %>
+                                    </h3>
+                                    <% if(blogs[i].tag){%>
+                                        <span
+                                            style="background-color: grey; color: white; padding: 5px; border-radius: 10px;text-align: center;"
+                                            class="by info">
+                                            <%= blogs[i].tag %>
+                                        </span>
+                                        <br>
+                                        <%}%>
+                                            <span class="by info">Posted by: <%= blogs[i].name %></span>
+                                            <br>
+                                            <span class="date info ">
+                                                <%= blogs[i].date.toLocaleDateString() %>
+                                            </span>
+                                            <h5 class="description info">
+                                                <%= blogs[i].description%>
+                                            </h5>
+                                            <div class="button-control">
+                                                <a class="btn btn1" href="/blog/<%=blogs[i]._id%>">ReadMore</a>
+                                                <% if(admin) {%>
+                                                    <a href="/blog/delete/<%=blogs[i]._id%>" class="btn btn2">Delete</a>
+                                                    <%}%>
+                                            </div>
                         </div>
-                    </div>
-                    <%}%>
                         <%}%>
+                            <%}%>
+                                <%}%>
 
 
         </div>

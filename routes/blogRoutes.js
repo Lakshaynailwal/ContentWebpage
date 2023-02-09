@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const express = require('express');
-const { create_get, create_post, showblog_get, delete_get, editblog_get, editblog_put, comment_post, upload_image } = require("../controllers/blogController");
+const { create_get, create_post, showblog_get, delete_get, editblog_get, editblog_put, comment_post, upload_image, comment_reply } = require("../controllers/blogController");
 const { checkAuth } = require("../middleware/authMiddleware");
 
 const multer = require("multer");
@@ -28,6 +28,7 @@ router.get("/edit/:id", editblog_get);
 router.get("/delete/:id", delete_get);
 router.put("/edit/:id", editblog_put);
 router.post("/comment", comment_post);
+router.post("/reply", comment_reply);
 router.post("/upload", checkAuth, upload.single('image'), upload_image)
 
 module.exports = router;

@@ -35,3 +35,49 @@ form.addEventListener("submit", async (e) => {
         // location.assign("/login");
     }
 })
+
+let replylink = document.getElementsByClassName('reply');
+// let replyform = document.getElementsByClassName('replyform');
+let replyform2 = document.getElementsByClassName("repform"); 
+
+let flag = false;
+for (let i = 0; i < replylink.length; i++) {
+    replylink[i].addEventListener('click', (e) => {
+        e.preventDefault();
+        if (!flag) {
+            replyform2[i].style.display = "flex";
+            flag = true;
+        }
+        else {
+            replyform2[i].style.display = "none";
+            flag = false;
+        }
+
+        replyform2[i].addEventListener('submit',async(e)=>{
+            e.preventDefault();
+
+            let comment_id = replyform2[i].comment_id.value;
+            let blog_id = replyform2[i].blog_id.value;
+            let reply = replyform2[i].reply.value;
+            let username = replyform2[i].username.value;
+
+            const res = await fetch("/blog/reply",{
+                method:"POST",
+                body: JSON.stringify({comment_id , blog_id , reply, username}),
+                headers: {"Content-Type": "application/json"}
+            })
+            const id = document.getElementById("id").value
+            const data = await res.json();
+
+            if(data){
+                location.assign(`/blog/${id}`);
+            }
+            else{
+                console.log("error");
+            }
+        })
+
+    })
+
+
+}

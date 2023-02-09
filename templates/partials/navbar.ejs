@@ -15,10 +15,10 @@
                 <a class="nav-link" href="/">Home </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="/#about">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact Us</a>
+                <a class="nav-link" href="/#contact">Contact Us</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/blog">Blogs</a>
@@ -29,18 +29,21 @@
                     Services
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="/#blog">Blog Posts</a>
+                    <a class="dropdown-item" href="/#website">Website Content</a>
+                    <a class="dropdown-item" href="/#tech">Technical Writing</a>
+                    <a class="dropdown-item" href="/#press">Press Releases</a>
+                    <a class="dropdown-item" href="/#copy">Copywriting</a>
+                    <a class="dropdown-item" href="/#ebook">Ebook Writing</a>
+                    <a class="dropdown-item" href="/#white">White Papers</a>
+                    <a class="dropdown-item" href="/#email">Email Newesletters</a>
+                    <a class="dropdown-item" href="/#product">Product Descriptions</a>
                 </div>
             </li>
         </ul>
         <ul class="login">
             <% if(user) {%>
-                <h5 style="padding:7px" class="nav-link">Welcome <%=user.name%>
+                <h5 style="padding:7px" class="nav-link"><%=user.name%>
                 </h5>
                 <li class="nav-item">
                     <button class="btn"><a class="nav-link log" href="/logout">Logout</a></button>
