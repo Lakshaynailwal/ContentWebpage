@@ -17,9 +17,8 @@
 }
 
 .carded {
-    width: 30%;
+    width: 400px;
     min-height: 300px;
-    /* border: 2px solid black; */
     border-radius: 10px !important;
     height: auto;
     margin: 30px 15px 50px;
@@ -75,7 +74,6 @@
     width: 100%;
     margin: auto;
     justify-content: center;
-    padding: 30px;
     margin-top: 30px;
 }
 
@@ -103,12 +101,17 @@
     text-decoration: none;
 }
 
-@media only screen and (max-width:650px) {
+@media only screen and (max-width:400px) {
     .carded {
-        width: 100% !important;
+        padding: 15px;
+        width: 100%;
     }
 
-    .create {
-        width: 50% !important;
+    .carded .btn {
+        width: 40%;
+    }
+
+    h3 {
+        font-size: 1.5rem !important;
     }
 }

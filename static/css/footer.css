@@ -28,6 +28,9 @@
 
 .Links {
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .maps {
@@ -95,7 +98,12 @@
 
     .Links{
         width:60%;
+        text-align: center;
     }
+}
+
+.Links span{
+    margin:5px auto;
 }
 
 @media only screen and (max-width:450px){

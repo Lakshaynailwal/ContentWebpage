@@ -21,10 +21,11 @@
         <div class="contain">
             <% if(blogs.length) {%>
 
-                <% for(let j=0;j<1;j++) {%>
+                <% for(let j=0;j<10;j++) {%>
 
                     <% for(let i=0;i<blogs.length;i++) {%>
                         <div class="carded">
+                            <br>
                             <% if(blogs[i].image) {%>
                                 <div class="image">
                                     <img src="<%=blogs[i].image %>" alt="">
