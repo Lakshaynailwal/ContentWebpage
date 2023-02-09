@@ -1,7 +1,7 @@
 .conti {
     display: flex;
     flex-direction: column;
-    background: url("https://img.freepik.com/free-photo/creative-flat-lay-photo-workspace-desk_7861-894.jpg?w=996&t=st=1675627458~exp=1675628058~hmac=d7c86e3edf43871dbdf93e4f293c50f2c454509c8646aac2a4a7018c7753f7fa") no-repeat center center/cover;
+    background: url("/images/blogbg.jpg") no-repeat center center/cover;
     background-attachment: fixed;
     height: 550px;
 
@@ -82,7 +82,9 @@
     border-radius: 10px;
     margin: auto !important;
     padding: 20px !important;
-    background-color: #fff176 !important;
+    color: white;
+    font-size: 20px !important;
+    background-color: #235489 !important;
 }
 
 .create {
@@ -95,8 +97,8 @@
 }
 
 .btned:hover {
-    color: black;
-    border: 2px solid #fff176 !important;
+    color: #235489;
+    border: 3px solid #235489 !important;
     background-color: transparent !important;
     text-decoration: none;
 }
