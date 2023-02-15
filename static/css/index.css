@@ -146,7 +146,7 @@ body {
 }
 
 #services .carded {
-    width: 400px;
+    width: 350px;
     min-height: 400px;
     background-color: white;
     border-radius: 10px;
@@ -156,7 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 #services .section {
@@ -308,13 +308,13 @@ body {
 
 }
 
-.carousel:before {
-    content: "COMPANY NAME";
+.carousel-item:before {
+    content: "CONTENT BAZZAR";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    font-size: calc(8vw + 30px);
+    font-size: calc(5.5vw + 30px);
     z-index: 10;
     color: white;
     bottom: 0;

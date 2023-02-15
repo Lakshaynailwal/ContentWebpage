@@ -1,10 +1,21 @@
 .conti {
     display: flex;
     flex-direction: column;
-    background: url("/images/blogbg.jpg") no-repeat center center/cover;
+    background: url("/images/main3.jpg") no-repeat center center/cover;
     background-attachment: fixed;
     height: 550px;
-
+}
+.conti h1,.conti .create{
+    color: white;
+    z-index: 10;
+}
+.conti::before{
+    content :"";
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    /* z-index: -1; */
+    background-color: rgb(0,0,0,0.5);
 }
 
 .search {

@@ -13,9 +13,10 @@
 }
 
 .companyInfo {
-    width: 70%;
+    width: 90%;
+    margin: auto;
     display: flex;
-    margin: 0px 20px;
+    padding: 1rem;
     flex-wrap: wrap;
 }
 
@@ -135,4 +136,19 @@
 .text-reset:hover{
     color: white;
     text-decoration: none;
+}
+
+.bg-dark{
+    background-color: #171c25 !important;
+}
+
+.link{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 200px;
+}
+.link span{
+    margin: 5px;
 }
