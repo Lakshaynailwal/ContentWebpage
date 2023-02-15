@@ -307,6 +307,16 @@ body {
     }
 
 }
+.carousel-caption{
+    color: white !important;
+    font-size: 25px;
+}
+.carousel-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .carousel-item:before {
     content: "CONTENT BAZZAR";
