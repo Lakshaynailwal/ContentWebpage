@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company|Blogs</title>
+    <link rel="stylesheet" href="/css/blog.css">
+</head>
+
+<style>
+    
+</style>
+
+<body>
+
+    <%- include("partials/navbar.ejs") %>
+        <div class="conti">
+                <h1>Purchase Blogs</h1>
+        </div>
+
+
+
+        <div class="contain">
+            <% if(blogs.length) {%>
+
+                <% for(let j=0;j<1;j++) {%>
+
+                    <% for(let i=0;i<blogs.length;i++) {%>
+                        <div class="carded">
+                            <br>
+                                    <h3 class="title info">
+                                        <%= blogs[i].title %>
+                                    </h3>
+                                            <h5 class="description info">
+                                                <%= blogs[i].description%>
+                                            </h5>
+                                            <div class="button-control">
+                                                <a class="btn btn1" href="/blog/paid/<%=blogs[i]._id%>">ReadMore</a>
+                                                <% if(admin) {%>
+                                                    <a href="/blog/delete/paid/<%=blogs[i]._id%>" class="btn btn2">Delete</a>
+                                                    <%}%>
+                                            </div>
+                        </div>
+                        <%}%>
+                            <%}%>
+                                <%}%>
+
+
+        </div>
+
+        <%- include("partials/footer.ejs") %>
+
+</body>
+
+</html>

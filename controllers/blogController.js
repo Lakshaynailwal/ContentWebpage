@@ -1,11 +1,12 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const Blogs = require("../models/blog");
+const paidBlog = require("../models/paidBlog")
 const { ObjectId } = require("mongodb");
 
 module.exports.create_get = (req, res) => res.render("writeblog")
 
-module.exports.create_post = (req, res) => {
+module.exports.create_post = async (req, res) => {
 
     let { title, description, markdown } = req.body;
 
@@ -21,6 +22,22 @@ module.exports.create_post = (req, res) => {
         tag = req.body.tag;
     }
 
+    if (req.body.paid) {
+        try {
+            let title = req.body.title;
+            let description = req.body.description;
+            let markdown = req.body.markdown;
+            let amount = req.body.amount;
+            let paid = req.body.paid;
+
+            await paidBlog.create({ title, description, markdown, amount, paid });
+            res.redirect("/blog/buy");
+        } catch (error) {
+            res.redirect("/blog")
+            console.log(error)
+        }
+    }
+
     const token = req.cookies.jwt;
     if (token) {
         jwt.verify(token, process.env.SECRET, async (err, decodedToken) => {
@@ -29,11 +46,15 @@ module.exports.create_post = (req, res) => {
                 res.redirect('/logout');
             }
 
-            let user = await User.findOne({ _id: decodedToken.id });
-            let email = user.email;
-            let name = user.name;
-            await Blogs.create({ title, description, markdown, email, name, image, tag })
-            res.redirect("/blog")
+            try {
+                let user = await User.findOne({ _id: decodedToken.id });
+                let email = user.email;
+                let name = user.name;
+                await Blogs.create({ title, description, markdown, email, name, image, tag })
+                res.redirect("/blog")
+            } catch (error) {
+                console.log(error.message)
+            }
         })
     }
     else {
@@ -54,18 +75,21 @@ module.exports.showblog_get = async (req, res) => {
 
 module.exports.editblog_get = async (req, res) => {
     const _id = req.params.id;
-    const blog = await Blogs.findOne({ _id });
-
-    let context = {
-        blog: blog
+    try {
+        let blog = await Blogs.findOne({ _id });
+        let context = {
+            blog: blog
+        }
+        res.render("editblog", context);
+    } catch (error) {
+        console.log(error)
+        res.redirect("/blog")
     }
-    res.render("editblog", context);
 }
 
 module.exports.editblog_put = async (req, res) => {
     const _id = req.params.id;
-    let blog = await Blogs.findOne({ _id })
-
+    let blog = await Blogs.findOne({ _id });
     await blog.updateOne({
         _id,
         title: req.body.title,
@@ -81,11 +105,13 @@ module.exports.editblog_put = async (req, res) => {
     }
 }
 
+
 module.exports.delete_get = async (req, res) => {
     const _id = req.params.id;
     await Blogs.deleteOne({ _id })
     res.redirect("/blog");
 }
+
 
 
 module.exports.comment_post = async (req, res) => {
@@ -129,16 +155,16 @@ module.exports.comment_reply = async (req, res) => {
 
         let reply_id = new ObjectId();
         await Blogs.updateOne({
-            "_id":new ObjectId(req.body.blog_id),
-            "comments._id":new ObjectId(req.body.comment_id)
+            "_id": new ObjectId(req.body.blog_id),
+            "comments._id": new ObjectId(req.body.comment_id)
         },
-        {
-          $push:{
-            "comments.$.replies": {_id: reply_id , name : req.body.username ,reply: req.body.reply,date: new Date}
-          } 
-            
-        })
-        
+            {
+                $push: {
+                    "comments.$.replies": { _id: reply_id, name: req.body.username, reply: req.body.reply, date: new Date }
+                }
+
+            })
+
 
         res.json("true");
 
@@ -147,3 +173,4 @@ module.exports.comment_reply = async (req, res) => {
         res.json("flase");
     }
 }
+

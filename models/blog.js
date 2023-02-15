@@ -29,8 +29,8 @@ const blogSchema = mongoose.Schema({
         default: Date.now
     },
     comments:{
-        type:Object,
-        default:{}
+        type:Array,
+        default:[]
     },
     image: {
         type:String,

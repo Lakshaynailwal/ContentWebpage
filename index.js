@@ -5,6 +5,7 @@ const port = process.env.PORT||5000;
 const navRoutes = require("./routes/navroutes");
 const AuthRoutes = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");
+const paidBlogRoutes = require("./routes/paidBlogRoutes");
 const app = express();  // instance of app
 const connectDB = require("./config/connectDB");
 const cookieparser = require("cookie-parser");
@@ -37,3 +38,4 @@ app.get('/', (req, res) => res.render('index'));
 app.use(AuthRoutes);
 app.use(navRoutes);
 app.use("/blog",blogRoutes);
+// app.use("/blog",paidBlogRoutes);
