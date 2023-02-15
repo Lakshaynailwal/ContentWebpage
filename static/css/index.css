@@ -46,12 +46,17 @@ body {
     position: unset;
 }
 
+.navbar{
+    z-index: 100;
+}
+
 .mainsection {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: -1;
 }
 
 .mainsection article {
@@ -78,7 +83,7 @@ body {
     margin: 20px auto 0;
     padding: 2rem 5rem;
     /* border: 2px solid red; */
-    background: url("/images/service.jgp")no-repeat center center/cover;
+    background: url("/images/service.jpg")no-repeat center center/cover;
     background-attachment: fixed;
 }
 
@@ -151,6 +156,7 @@ body {
     justify-content: center;
     align-items: center;
     margin: 20px;
+    border: 2px solid black;
 }
 
 #services .section {

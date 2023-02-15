@@ -27,7 +27,7 @@
     align-items: center;
 }
 .navbar {
-    padding: 25px
+    padding: 10px
 }
 
 .btn:hover{
@@ -41,4 +41,8 @@
 
 *{
     scroll-behavior: smooth;
+}
+.navbar-brand img{
+    height: 60px;
+    object-fit: cover;
 }
