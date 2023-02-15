@@ -38,4 +38,4 @@ app.get('/', (req, res) => res.render('index'));
 app.use(AuthRoutes);
 app.use(navRoutes);
 app.use("/blog",blogRoutes);
-// app.use("/blog",paidBlogRoutes);
+app.use("/blog/paid",paidBlogRoutes);

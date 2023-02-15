@@ -20,7 +20,7 @@
             </h2>
         </div>
 
-        <form class="form" action="/blog/edit/paid/<%= blog.id %>?_method=PUT" method="post">
+        <form class="form" action="/blog/paid/edit/<%= blog.id %>?_method=PUT" method="post">
             <input class="text1 com" type="text" value="<%=blog.title%>" required name="title"
                 placeholder="Write Your Title">
             <input class="text1 com" type="number" value="<%=blog.amount%>" name="amount" placeholder="Write Amount">
@@ -32,7 +32,7 @@
             <input type="checkbox" name="paid" id="paid" checked>
             <div style="width: 100% ; margin: auto;" class="button-control com1">
                 <button class="btn btn3">Submit</button>
-                <button class="btn btn2" onclick="location.assign('/blog')">Cancel</button>
+                <button class="btn btn2" onclick="location.assign('/blog/buy')">Cancel</button>
             </div>
         </form>
         <!-- <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"

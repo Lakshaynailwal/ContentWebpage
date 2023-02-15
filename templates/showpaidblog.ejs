@@ -32,8 +32,8 @@
 
                 <% if(user){%>
                     <% if(user.email==blog.email || admin) {%>
-                        <a href="/blog/edit/paid/<%=blog._id%>" class=" btn2 btn btn-primary">Edit</a>
-                        <a href="/blog/delete/<%=blog._id%>" class="btn-danger btn3 btn ">Delete</a>
+                        <a href="/blog/paid/edit/<%=blog._id%>" class=" btn2 btn btn-primary">Edit</a>
+                        <a href="/blog/paid/delete/<%=blog._id%>" class="btn-danger btn3 btn ">Delete</a>
                         <%}%>
                             <%}%>
             </div>

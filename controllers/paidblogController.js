@@ -27,7 +27,7 @@ module.exports.editblogpaid_get = async (req, res) => {
         res.render("editpaidblog", context);
     } catch (error) {
         console.log(error)
-        res.redirect("/blog/buy")
+        res.redirect("/blog/paid/buy")
     }
 }
 
@@ -43,7 +43,7 @@ module.exports.editblogpaid_put = async (req, res) => {
     });
     try {
         await blog.save();
-        res.redirect("/blog/buy");
+        res.redirect("/blog/paid/buy");
     } catch (e) {
         console.log(e);
     }
@@ -52,5 +52,5 @@ module.exports.editblogpaid_put = async (req, res) => {
 module.exports.deletePaid_get = async (req, res) => {
     const _id = req.params.id;
     await paidBlog.deleteOne({ _id })
-    res.redirect("/blog/buy");
+    res.redirect("/blog/paid/buy");
 }
