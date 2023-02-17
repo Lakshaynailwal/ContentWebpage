@@ -3,7 +3,10 @@
 }
 .navbar-brand{
     margin-left: 10px;
-    border-radius: 50%;
+
+}
+.navbar-brand img{
+    border-radius: 50% !important;
 }
 .log{
     color:white

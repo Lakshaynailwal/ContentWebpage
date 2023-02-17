@@ -1,4 +1,4 @@
-require("dotenv").config({ path: "./config/config.env" }); // getting secret files
+require("dotenv").config({ path: "./config.env" }); // getting secret files
 
 const express = require("express");
 const port = process.env.PORT||5000;

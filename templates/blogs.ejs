@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="/css/blog.css">
 </head>
 
+<style>
+    .conti h2{
+        color: white;
+        z-index: 10;
+    }
+</style>
+
 <body>
 
     <%- include("partials/navbar.ejs") %>
@@ -16,7 +23,8 @@
             <% if(admin) {%>
                 <a class="create" href="/blog/create"><button class="btn btned">Write A Blog</button></a>
                 <%}%>
-                <h1>Read Our Blogs</h1>
+                <h1>We have curated some amazing articles for you</h1> 
+                <h1>Scroll down to enjoy it with a cup of coffee.</h1>
         </div>
 
 
