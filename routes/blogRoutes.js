@@ -20,11 +20,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-// router.get("/buy",buyblog_get)
-// router.get("/paid/:id",checkAuth,buyBlog_paid_get)
-// router.get("/delete/paid/:id", deletePaid_get);
-// router.get("/edit/paid/:id", editblogpaid_get);
-// router.put("/edit/paid/:id", editblogpaid_put);
 router.get("/create", checkadmin, create_get);
 router.post("/create", checkadmin, create_post);
 router.get("/:id", showblog_get);

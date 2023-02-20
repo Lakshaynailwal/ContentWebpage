@@ -1,7 +1,7 @@
 require("dotenv").config({ path: "./config.env" }); // getting secret files
 
 const express = require("express");
-const port = process.env.PORT||5000;
+const port = process.env.PORT||4000;
 const navRoutes = require("./routes/navroutes");
 const AuthRoutes = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");

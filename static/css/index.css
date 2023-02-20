@@ -35,9 +35,13 @@ body {
     object-fit: cover;
 }
 
+.carousel-item{
+    height: 80vh;
+}
+
 .carousel-item img {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     object-fit: cover;
 }
 
@@ -52,7 +56,7 @@ body {
 
 .mainsection {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +94,7 @@ body {
 .counter {
     display: flex;
     width: 100%;
-    background-color: #0056b3;
+    background-color: #1b0051;
     justify-content: space-evenly;
     align-items: center;
     min-height: 200px;
@@ -118,11 +122,11 @@ body {
 }
 
 #promise {
-    padding: 2rem 10rem;
+    padding: 2rem;
     background-color: #F4F7F9;
     background-attachment: fixed;
     width: 100%;
-    min-height: 500px;
+    min-height: 300px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -137,8 +141,8 @@ body {
 }
 
 .promise .element {
-    width: 400px;
-    min-height: 200px;
+    width: 350px;
+    /* min-height: 200px; */
     display: flex;
     flex-direction: column;
     margin: 20px auto;
@@ -235,11 +239,14 @@ body {
 
     #promise h2 {
         font-size: 1.5rem !important;
+        text-align: center;
     }
 
     .carded {
-        width: 400px !important;
+        width: 300px !important;
         padding: 5px;
+        margin:unset;
+        margin-top: 20px;
     }
 
     #contact {
@@ -262,8 +269,17 @@ body {
         font-size: 3.7rem;
     }
 
+    .image{
+        height: 170px ;
+    }
+    .carousel-caption{
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+
     #about p {
-        font-size: 13.5px !important;
+        font-size: 16.5px !important;
     }
 
     #about img {
@@ -271,7 +287,7 @@ body {
     }
 
     .carded span {
-        font-size: 14px;
+        font-size: 15.5px;
     }
 
     #services {
@@ -295,7 +311,7 @@ body {
     }
 
     .left span {
-        font-size: 14px;
+        font-size: 15.5px;
     }
 
     .right .form {
@@ -310,6 +326,7 @@ body {
 .carousel-caption{
     color: white !important;
     font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.638);
 }
 .carousel-item{
     display: flex;
@@ -318,20 +335,36 @@ body {
     align-items: center;
 }
 
-.carousel-item:before {
-    content: "CONTENT BAZZAR";
-    position: absolute;
+.carded h4{
+    color:black;
+}
+
+.carousel-item::before {
+    /* content: ""; */
+    /* position: absolute;
     top: 0;
     left: 0;
     right: 0;
     font-size: calc(5.5vw + 30px);
     z-index: 10;
-    color: white;
-    bottom: 0;
+    color: white; */
+    /* text-shadow: 1px 1px 20px #fbe600ba; */
+    /* bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: rgb(0, 0, 0, 0.7);
-    text-align: center;
+    height: 80vh; */
+    /* background-color: rgb(0, 0, 0, 0.2); */
+    /* text-align: center; */
+}
+
+.heading{
+    color:#1b0051;
+    font-size:2rem
+}
+
+.counter-style{
+    display: flex; 
+    justify-content: center ; 
+    align-items: center;
 }

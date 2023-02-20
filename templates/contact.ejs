@@ -16,26 +16,29 @@
 
         <div class="mainbody">
             <div class="left">
-                <h1 class="leftin">Let's talk about everything!</h1>
-                <p class="leftin para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, ad.</p>
-                <img class="leftin image"
-                    src="https://preview.colorlib.com/theme/bootstrap/contact-form-16/images/undraw-contact.svg" alt="">
+                <h1 class="leftin">Get Quotes From Professionals</h1>
+                <h4 class="leftin para">Let's talk about everything!</h4>
+                <img class="leftin image" style="height:500px"
+                    src="https://img.freepik.com/free-vector/positive-mind-lettering-with-photo_52683-40379.jpg" alt="">
             </div>
 
             <div class="right">
                 <form class="form" action="/send">
 
                     <input class="input" type="text" name="name" required placeholder="Name" />
-
+                    <input class="input" type="number" name="phone" required placeholder="Phone Number" />
+                    
                     <input class="input" type="text" name="email" required placeholder="E-mail" />
                     <div class="email error"></div>
 
+                    <input class="input" type="text" name="organization" placeholder="Enter Your Organization" />
+
                     <input class="input" type="text" name="subject" placeholder="Subject" />
 
-                    <textarea class="text input" name="body" id="" rows="10" required
-                        placeholder="Write your query here!"></textarea>
+                    <textarea class="text input" name="body" id="" rows="5" required
+                        placeholder="Write your Message"></textarea>
 
-                    <button class="btn button">Contact</button>
+                    <button class="btn button">POST</button>
                 </form>
             </div>
 
@@ -44,7 +47,7 @@
 
         <%- include("partials/footer.ejs") %>
 
-            <script src="/js/contact.js"></script>
+            <script src="/js/getquote.js"></script>
 
 </body>
 
