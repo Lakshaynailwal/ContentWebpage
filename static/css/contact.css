@@ -12,15 +12,20 @@
 
 @media only screen and (max-width:900px){
     .left{
-        width:80% !important;
+        width:100% !important;
+        text-align: center;
+    }
+    .left img{
+        height: 300px !important;
         text-align: center;
     }
     .right{
-        width: 80% !important
+        width: 100% !important
     }
     .mainbody{
         flex-direction: column;
     }
+
 }
 /* @media only screen and (max-width:650px){
     .form{

@@ -19,12 +19,13 @@
 <body>
 
     <%- include("partials/navbar.ejs") %>
-        <div class="conti">
+        <div class="conti" style="display:flex;flex-direction: column;justify-content: center;
+        align-items: center  ;text-align: center;">
             <% if(admin) {%>
                 <a class="create" href="/blog/create"><button class="btn btned">Write A Blog</button></a>
                 <%}%>
-                <h1>We have curated some amazing articles for you</h1> 
-                <h1>Scroll down to enjoy it with a cup of coffee.</h1>
+                <h2>We have curated some amazing articles for you</h2> 
+                <h2>Scroll down to enjoy it with a cup of coffee.</h2>
         </div>
 
 

@@ -44,7 +44,7 @@
     font-size: 17px;
 }
 .navbar-nav .nav-link:hover{
-    transform: scaleX(1.2);
+    /* transform: scaleX(1.2); */
     text-decoration: underline;
 }
 
@@ -59,4 +59,9 @@
 .btn{
     background-color: #1b0051 !important;
     color: white !important;
+}
+
+
+body,html{
+    overflow-x: hidden;
 }

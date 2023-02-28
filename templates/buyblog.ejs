@@ -12,8 +12,9 @@
 <body>
 
     <%- include("partials/navbar.ejs") %>
-        <div class="conti">
-                <h1>Purchase Blogs</h1>
+        <div class="conti" style="display:flex;flex-direction: column;justify-content: center;
+        align-items: center  ;text-align: center; color: white !important; z-index: 100000;" >
+                <h2>Buy Custom Written Blogs From Us</h2>
         </div>
 
 
@@ -36,10 +37,10 @@
                                             <h5 class="description info">
                                                 <%= blogs[i].description%>
                                             </h5>
-                                            <h5 class="description info">
+                                            <!-- <h5 class="description info">
                                                 <span style="color: blue
                                                 ;"><span>Purchase:</span>&nbsp;INR <%=blogs[i].amount %></span>
-                                            </h5>
+                                            </h5> -->
                                             <div class="button-control">
                                                 <a class="btn btn1" href="/blog/paid/<%=blogs[i]._id%>">ReadMore</a>
                                                 <% if(admin) {%>

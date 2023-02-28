@@ -37,7 +37,7 @@ module.exports.send_post = (req,res) =>{
 
     const mailOptions = {
         from: data.email,
-        to: "nailwal001@gmail.com",
+        to: "info@contentbazzaar.com",
         subject: data.subject,
         text: data.body
     }
@@ -78,7 +78,7 @@ module.exports.sendquote_post = (req,res) =>{
 
     const mailOptions = {
         from: data.email,
-        to: "nailwal805@gmail.com",
+        to: "info@contentbazzaar.com",
         subject: data.subject,
         text: data.body
     }
