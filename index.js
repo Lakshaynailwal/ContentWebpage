@@ -14,6 +14,8 @@ const methodOverride = require("method-override");
 
 const faqs = require("./models/faqs")
 
+
+
 // connecting database
 connectDB().then(() => {
     app.listen(port, () => {

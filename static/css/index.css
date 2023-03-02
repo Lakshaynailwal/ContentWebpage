@@ -337,6 +337,14 @@ body {
     }
 
 }
+
+
+.accordion-button {
+    border-radius: 7px !important;
+    padding: 29px !important;
+}
+
+
 .carousel-caption{
     color: white !important;
     font-size: 25px;

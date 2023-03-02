@@ -11,6 +11,29 @@
 </head>
 
 <body onload="notification()">
+
+    <!-- <button onclick="subscribe()">Subscribe</button>
+
+    <script>
+
+        addEventListener("load",async()=>{
+            let se  = navigator.serviceWorker.register("./sw.js")
+            console.log(sw)
+        })
+
+        async function subscribe(){
+            let sw  = await navigator.serviceWorker.ready;
+            let push = await sw.pushManager.subscribe({
+                userVisibleOnly:true,
+                applicationServerKey:'BFmJYo-63efRXjjJjY-Mth1atWwd-twXAwMIZsbKYo_7X1xE0sJZjF7AQt9-9kIG47g-Qeb7_oU8tswZNNQmINY'
+            })
+            console.log(JSON.stringify(push))
+        }
+
+    </script> -->
+
+
+
     <%- include("partials/navbar.ejs") %>
         <div class="mainsection ">
 
@@ -273,17 +296,85 @@
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                             <!-- faq title -->
-                            Lorem, ipsum.
+                            What makes Content Bazzaar the best content writing agency?
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <!-- faq content -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor doloribus suscipit molestias, quidem adipisci commodi, magnam labore veniam quis laborum qui enim, laboriosam inventore recusandae accusamus placeat nam? Repudiandae modi perspiciatis iste beatae minus velit, voluptas consequatur optio doloremque nisi.
+                            One of our distinctive traits is our commitment and passion for producing top-notch content for our clients. We never compromise on the quality of our work or the user experience we provide. We employ an efficient content delivery approach to ensure our clients receive exceptional content.
                         </div>
                     </div>
                 </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <!-- faq title -->
+                            What are the costs of services provided by Content Bazzaar?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <!-- faq content -->
+                            At Content Bazzaar, we offer flexible and tailored plans to meet your unique content needs. Our standard pricing model is based on the cost per word, but we are open to exploring alternative pricing models or negotiating prices if necessary. We understand that every client has their own specific requirements, and we do not believe in a one-size-fits-all approach. Therefore, we do not limit ourselves to just a few fixed plans and instead strive to create customized solutions for each client.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-heading3">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse3" aria-expanded="false" aria-controls="flush-collapse3">
+                            <!-- faq title -->
+                            Do Content Bazzaar take bulk content orders?
+                        </button>
+                    </h2>
+                    <div id="flush-collapse3" class="accordion-collapse collapse" aria-labelledby="flush-heading3"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <!-- faq content -->
+                            Our services are well-suited to handling bulk content requirements. With a widespread team of dedicated writers and editors, as well as partnerships with leading content creators, we're capable of managing and delivering high-quality content regardless of scale. We've successfully completed numerous bulk assignments in the past and always prioritize maintaining a balance between quality and quantity.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                            <!-- faq title -->
+                            Do Content Bazzaar focus on SEO optimized contents?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapse4" class="accordion-collapse collapse" aria-labelledby="flush-heading4"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <!-- faq content -->
+                            At Content Bazzaar, we specialize in SEO content writing which is a popular content format. Our team of experienced writers understands the significance of keywords in achieving high search engine rankings. They have the skill to seamlessly incorporate keywords into content while maintaining a cohesive and readable flow. Our goal is to provide exceptional content that meets the highest standards.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapse5" aria-expanded="false" aria-controls="flush-collapse5">
+                            <!-- faq title -->
+                            What all niches Content Bazzaar cater to?
+
+                        </button>
+                    </h2>
+                    <div id="flush-collapse5" class="accordion-collapse collapse" aria-labelledby="flush-heading5"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <!-- faq content -->
+                            Our services cater to a wide range of industries, assisting businesses in establishing a strong digital presence through effective content marketing strategies. Our experience spans across various industries, including fashion, digital marketing, technology, and personal development, having served numerous clients by delivering top-notch and compelling content that aligns with their specific marketing goals.
+                        </div>
+                    </div>
+                </div>
+                
                 
             </div>
 
