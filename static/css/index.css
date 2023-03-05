@@ -35,13 +35,13 @@ body {
     object-fit: cover;
 }
 
-.carousel-item{
+.carousel-item {
     height: 80vh;
 }
 
-.landing{
+.landing {
     width: 100%;
-    margin:auto;
+    margin: auto;
     background-color: #1b0051;
 }
 
@@ -58,7 +58,7 @@ body {
     position: unset;
 }
 
-.navbar{
+.navbar {
     z-index: 100;
 }
 
@@ -255,7 +255,7 @@ body {
     .carded {
         width: 300px !important;
         padding: 5px;
-        margin:unset;
+        margin: unset;
         margin-top: 20px;
     }
 
@@ -279,14 +279,15 @@ body {
         font-size: 3.7rem;
     }
 
-    .accordion-item{
+    .accordion-item {
         width: 100% !important;
     }
 
-    .image{
-        height: 170px ;
+    .image {
+        height: 170px;
     }
-    .carousel-caption{
+
+    .carousel-caption {
         left: 0 !important;
         right: 0 !important;
         bottom: 0 !important;
@@ -345,50 +346,52 @@ body {
 }
 
 
-.carousel-caption{
+.carousel-caption {
     color: white !important;
     font-size: 25px;
     background-color: rgba(0, 0, 0, 0.638);
 }
-.carousel-item{
+
+.carousel-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.carded h4{
-    color:black;
+.carded h4 {
+    color: black;
 }
 
-.heading{
-    color:#1b0051;
-    font-size:2rem
+.heading {
+    color: #1b0051;
+    font-size: 2rem
 }
 
-.counter-style{
-    display: flex; 
-    justify-content: center ; 
+.counter-style {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.accordion{
+.accordion {
     margin: 50px auto;
     text-align: center;
 }
 
-.accordion-item{
+.accordion-item {
     width: 70%;
     margin: 20px auto;
     border: 2px solid #1b0051 !important;
     text-align: center;
     border-radius: 10px !important;
 }
-.accordion-item h2{
+
+.accordion-item h2 {
     border-radius: 10px;
 }
 
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
     background-color: #1b0051 !important;
     color: white !important;
 }
@@ -396,4 +399,3 @@ body {
 .accordion-button:focus {
     box-shadow: unset !important;
 }
-
