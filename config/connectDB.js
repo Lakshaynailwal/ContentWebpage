@@ -3,7 +3,8 @@ mongoose.set('strictQuery', true);
 
 
 const Connect =  ()=>(
-    mongoose.connect(process.env.MONGO_URL).then(()=>{
+    mongoose.connect(process.env.MONGO_URL,
+        {useNewUrlParser: true}).then(()=>{
         console.log("Succesfully connected to db");
     }).catch((e)=>{
         console.log(e);
